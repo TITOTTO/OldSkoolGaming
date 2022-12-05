@@ -1,16 +1,65 @@
-<h2>Forgot your password?</h2>
+<style>
+.btn-color{
+  background-color: #0e1c36;
+  color: #fff;
+  
+}
 
+.profile-image-pic{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+
+.cardbody-color{
+  background-color: #ebf2fa;
+}
+
+a{
+  text-decoration: none;
+}
+</style>
+<div class="container">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-dark mt-5">T'as encore oublié ton Mot de passe ?</h2>
+        <div class="text-center mb-5 text-dark">pas grave, change le ici</div>
+        <div class="card my-5">
+
+          <form class="card-body cardbody-color p-lg-5">
+
+            <div class="text-center">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRazSZo3Bibv8k9yljQSv_lgCpmBpaEbgRr2g&usqp=CAU" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-5"
+                width="200px" alt="profile">
+            </div>
+
+            <div class="text-center">       
+              
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
+                
+            </div>
+            <div class="text-center">
+              <div class="actions">
+                 <%= f.submit "Envoi moi comment je change de MDP" %>
+              </div>
+              <% end %>                        
+           
+      </div>
+          <form>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">
+              <%= render "devise/shared/links" %>
+              </div>
+          </form>          
+     </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+

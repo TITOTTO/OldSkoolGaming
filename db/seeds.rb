@@ -18,64 +18,64 @@ end
 Article.create(
     title: 'Super Mario World',
     price: 10,
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "",
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Super_Mario_World_SNES.png/220px-Super_Mario_World_SNES.png'
-),
+)
 # Article 2
 Article.create(
     title: 'The Legend of Zelda: A Link to the Past',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Legend_of_Zelda_A_Link_to_the_Past_SNES.png/220px-Legend_of_Zelda_A_Link_to_the_Past_SNES.png'
-),
+)
   # Article 3
 Article.create(
     title: 'Super Mario Kart',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Super_Mario_Kart_SNES.png/220px-Super_Mario_Kart_SNES.png'
-),
-  # Article 4
+)
+# Article 4
 Article.create(
     title: 'Super Metroid',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     year: 1994,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Super_Metroid_SNES.png/220px-Super_Metroid_SNES.png'
-),
+)
   # Article 5
 Article.create(
     title: 'Chrono Trigger',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Chrono_Trigger_SNES.png/220px-Chrono_Trigger_SNES.png'
-),
+)
  # Article 6
 Article.create(
     title: 'Super Mario 64',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/Super_Mario_64_box.png/220px-Super_Mario_64_box.png'
-),
+)
   # Article 7
 Article.create(
     title: 'The Legend of Zelda: Ocarina of Time',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/The_Legend_of_Zelda_Ocarina_of_Time_box_art.png/220px-The_Legend_of_Zelda_Ocarina_of_Time_box_art.png'
-),
+)
   # Article 8
 Article.create(
     title: 'The Legend of Zelda: Majora\'s Mask',
-    typeofgame:
-    console:
+    typeofgame: "",
+    console: "" ,
     price: 10,
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/The_Legend_of_Zelda_Majora%27s_Mask_box_art.png/220px-The_Legend_of_Zelda_Majora%27s_Mask_box_art.png'
 )
