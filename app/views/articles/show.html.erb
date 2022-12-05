@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render "form/article/show" %> <!-- A modifier -->
+
+
+<%= render "form/article/undershow" %> <!-- A modifier -->
+
+
+<br>
+<div class= "test d-none"> <!-- la div s'appelle test et est caché, pour changer le nom de la div, il faut aussi le changer dans app/javascript/controller/comments_controller.js-->
+<%= render "form/article/newcom" %> <!-- A modifier -->
+</div>
+<!-- Le bouton en dessous affiche ou cache le formulaire du commentaire -->
+<%= link_to "Mettre un commentaire", nil , remote: true, class: "btn btn-danger", data: {controller: "comments", action: "comments#toggleForm"} %>
+
+<br>
+<!-- Faire une div pour mettre les commentaires dedans -->
+<%= render "form/article/comments" %> <!-- A modifier -->

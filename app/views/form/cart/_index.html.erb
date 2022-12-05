@@ -1,0 +1,8 @@
+<% @user.carts.each do |cart| %>  <!-- On liste tous les articles de l'utilisateur connecté -->
+<%= cart.article.title %>
+<%= cart.article.content %>
+<%= cart.article.price %>
+<%= cart.article.seller.first_name %>  <!-- Si jamais celui qui fait cette page veut le nom du type qui vend le produit -->
+<% end %>
+
+<%= @total %> <!-- Variable du total du prix de tous les articles -->

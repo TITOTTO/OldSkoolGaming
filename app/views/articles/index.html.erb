@@ -1,0 +1,13 @@
+<% if flash[:error] %>
+  <div class="notice", style="color: red"><%= flash[:error] %></div>
+<% end %>
+
+<h1>Articles</h1>
+
+<%= render "form/article/allarticle" %>  <!-- A modifier -->
+
+<%= link_to "New article", new_article_path %>
+
+
+
+<%= link_to "Mettre un commentaire", nil , remote: true, class: "btn btn-danger", data: {controller: "background"}%> <!-- Pas encore codé -->

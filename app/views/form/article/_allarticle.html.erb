@@ -1,0 +1,29 @@
+<!-- Ne pas afficher l'article si article.buyer est différent de nil (Donc s'il a été acheté) -->
+<!-- if article.buyer != nil -->
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+        <%= form_with url: "/articles", method: :get do |form| %>
+            <%= form.label :console %> <br />
+            <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}) %> <br />
+
+	          <%= form.label :typeofgame %>
+            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}) %>
+            
+	    <%= form.submit %>
+        <% end %>
+        </div>
+      </div>
+
+<div id="articles">
+  <% @articles.each do |article| %>
+  <!-- Le code ici a pour but de ne montrer que les articles que l'on recherche grace aux filtres 
+        Parameters: {"console"=>"PS1", "typeofgame"=>"Console"}  Ce qui signifie, si aucun filtre n'existe, donc on affiche tout
+        else   Si on rentre dans la condition else, cela signifie qu'il y a un filtre, dans ce cas on affiche pas tout -->
+    <%= article.title %>
+    <%= article.content %>
+    <%= article.price %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+  <% end %>
+</div>
