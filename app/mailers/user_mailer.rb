@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
    def  buy_email(order)
          #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
          @order = order
-         @user = order.user
+         @user = @order.user
       #on définit une variable @url qu'on utilisera dans la view d’e-mail
          @url  = "oldschoolgaming.fr"
       # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
@@ -23,12 +23,17 @@ class UserMailer < ApplicationMailer
 
    def sell_email(order)
          #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-         @order = sell
-         @user = sell.user
+         tab = []
+         @order = order
+         @order.articles.each do |articles|
+            tab << articles.seller
+         end
       #on définit une variable @url qu'on utilisera dans la view d’e-mail
          @url  = "oldschoolgaming.fr"
-      # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
+         tab.each do |user|
+            @user = user
          mail(to: @user.email, subject: 'vente faite !')
+         end
    end
 
 end
