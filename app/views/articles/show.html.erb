@@ -1,18 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render "form/article/show" %> <!-- A modifier -->
+<%= render "form/article/show" %>
 
 
-<%= render "form/article/undershow" %> <!-- A modifier -->
+<div class="container bootdey">
+<div class="col-md-12">
+<section class="panel">
+      <div class="panel-body">
+          <div class="col-md-6">
+<div>
+  <%= link_to "Edit this article", edit_article_path(@article) %> |
+  <%= link_to "Back to articles", articles_path %>
 
-
-<br>
-<div class= "test d-none"> <!-- la div s'appelle test et est caché, pour changer le nom de la div, il faut aussi le changer dans app/javascript/controller/comments_controller.js-->
-<%= render "form/article/newcom" %> <!-- A modifier -->
+  <%= button_to "Destroy this article", @article, method: :delete %>
 </div>
-<!-- Le bouton en dessous affiche ou cache le formulaire du commentaire -->
-<%= link_to "Mettre un commentaire", nil , remote: true, class: "btn btn-danger", data: {controller: "comments", action: "comments#toggleForm"} %>
-
-<br>
-<!-- Faire une div pour mettre les commentaires dedans -->
-<%= render "form/article/comments" %> <!-- A modifier -->
+          </div>
+      </div>
+  </section>
+  </div>
+  </div>

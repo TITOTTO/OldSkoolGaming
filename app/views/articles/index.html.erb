@@ -2,9 +2,27 @@
   <div class="notice", style="color: red"><%= flash[:error] %></div>
 <% end %>
 
-<h1>Articles</h1>
+      <!-- Partie filtre -->
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+        <%= form_with url: "/articles", method: :get do |form| %>
+            <%= form.label :console %> <br />
+            <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}) %> <br />
 
-<%= render "form/article/allarticle" %>  <!-- A modifier -->
+	          <%= form.label :typeofgame %>
+            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}) %>
+            
+	    <%= form.submit %>
+        <% end %>
+        </div>
+      </div>
+
+<p class="text-uppercase font-weight-bold">Cards</p>
+<div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
+  
+    <%= render "form/article/allarticle" %>  <!-- A modifier -->
+</div>
+
 
 <%= link_to "New article", new_article_path %>
 

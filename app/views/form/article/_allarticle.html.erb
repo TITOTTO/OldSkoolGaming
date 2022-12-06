@@ -1,29 +1,35 @@
 <!-- Ne pas afficher l'article si article.buyer est différent de nil (Donc s'il a été acheté) -->
 <!-- if article.buyer != nil -->
-      <div class="col-md-6">
-        <div class="h-100 p-5 bg-light border rounded-3">
-        <%= form_with url: "/articles", method: :get do |form| %>
-            <%= form.label :console %> <br />
-            <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}) %> <br />
 
-	          <%= form.label :typeofgame %>
-            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}) %>
-            
-	    <%= form.submit %>
-        <% end %>
-        </div>
-      </div>
 
-<div id="articles">
   <% @articles.each do |article| %>
   <!-- Le code ici a pour but de ne montrer que les articles que l'on recherche grace aux filtres 
         Parameters: {"console"=>"PS1", "typeofgame"=>"Console"}  Ce qui signifie, si aucun filtre n'existe, donc on affiche tout
         else   Si on rentre dans la condition else, cela signifie qu'il y a un filtre, dans ce cas on affiche pas tout -->
-    <%= article.title %>
-    <%= article.content %>
-    <%= article.price %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
+<div class="col-md-6 col-lg-4 pb-3">
+  <div class="card card-custom bg-white border-white border-0" style="height: 30rem">
+    <div class="card-custom-avatar align-self-center">
+      <img class="img-fluid" src="http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg" alt="Avatar" style="height: 10rem" />
+    </div>
+    <div class="card-body">
+      <div class="clearfix mb-3">
+        <span class="float-start badge rounded-pill bg-primary"><%= article.title %></span>
+        <span class="float-end price-hp"><%= article.price %> €</span>
+      </div>
+    </div>
+    <div class="card-body" style="overflow-y: auto">
+        <p class="card-text"><%= article.content %></p>
+    </div>
+    <div class="card-footer" style="background: inherit; border-color: inherit;">
+      <%= link_to "Voir cet article", article_path(article), class:"btn bg-gradient-primary" %>
+      <% if current_user %>
+      <%= form_with url: "/user/#{current_user.id}/carts", method: :post do |form| %>
+        <%= hidden_field_tag :article, article.id %>
+        <%= form.submit 'Mettre au panier', :class => 'btn btn-success' %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+  <% end %>
