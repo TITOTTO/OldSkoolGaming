@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :images, only: [:create, :destroy]
   end
+  resources :orders, only: [:new, :create]
   resources :user do
     resources :carts, only: [:index, :create, :destroy]
     resources :avatars, only: [:create, :destroy]

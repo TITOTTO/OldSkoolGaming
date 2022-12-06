@@ -12,13 +12,13 @@ class CartsController < ApplicationController
 
   # POST /carts or /carts.json
   def create
-    puts params
     @user = current_user
     ArticleCart.create!(cart: @user.cart, article_id: params[:article])
+    redirect_to user_carts_path(current_user)
   end
 
   def destroy
-
+    ArticleCart.find(params[:article]).destroy
   end
 
   def checklog
