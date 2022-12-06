@@ -4,18 +4,17 @@
 
 
 <div class="container bootdey">
-<div class="col-md-12">
-<section class="panel">
+  <div class="col-md-12">
+    <section class="panel">
       <div class="panel-body">
-          <div class="col-md-6">
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
+        <div class="col-md-6">
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
-</div>
-          </div>
+  <%= link_to "Modifier l'article", edit_article_path(@article) %> |
+  <%= link_to "Revenir à l'article", articles_path %>
+  <%= button_to "Supprimer l'article", @article, method: :delete %>
+
+    </section>
+       </div>
       </div>
-  </section>
-  </div>
-  </div>
+    </div>
+</div>
