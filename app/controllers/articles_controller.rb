@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    puts params
     @articles = Article.all
   end
 
