@@ -17,12 +17,11 @@
         </div>
       </div>
 
-  <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Article</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <%= render "form/article/allarticle" %>  <!-- A modifier -->
-    </div>
-  </div>
+<p class="text-uppercase font-weight-bold">Cards</p>
+<div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
+  
+    <%= render "form/article/allarticle" %>  <!-- A modifier -->
+</div>
 
 
 <%= link_to "New article", new_article_path %>
