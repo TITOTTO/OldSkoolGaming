@@ -1,48 +1,9 @@
 <h1>Editing article</h1>
 
-<%= render "form", article: @article %>
+<%= render "form/article/edit", article: @article %>
 
 <br>
 <% if flash[:error] %>
   <div class="notice", style="color: red"><%= flash[:error] %></div>
 <% end %>
 
-<h1>Articles</h1>
-<% @articles.each do |article| %>
-
-  <div class="col-sm-12 col-12 col-md-4">
-  <a href="<%= article_path(article.id) %>" class="card-clic">
-    <div class="card border-secondary mb-4 card-index">
-      <div class="card-header p-0">
-        <%= image_tag article.image_url,  :size => "400x500", :crop => :fill, class: "card-img-top" %>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title"><%= article.title %></h4>
-        <p class="card-text"><%= article.typeofgame %></p>
-        <p class="card-text"><%= article.console %></p>
-        <p class="card-text"><%= article.content %></p>
-        <p class="card-text"><%= article.price %> €</p>
-      </div>
-      <div class="card-footer">
-        <%= link_to "Voir plus", article_path(article.id), class:"btn btn-outline-dark mx-1 my-1" %>
-        <% if user_signed_in?%>
-          <%= link_to cart_path(article.id), class: "color_cart", remote: true, method: "PUT" do %>
-            <i class="fas fa-shopping-cart fa-lg float-right mt-3 mr-2"></i>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_session_path, class: "color_cart", method: "GET" do %>
-            <i class="fas fa-shopping-cart fa-lg float-right mt-3 mr-2"></i>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</a>
-<% end %>
-</div>
-
-<div>
-  <%= link_to "Show this article", @article %> |
-  <%= link_to "Back to articles", articles_path %>
-  
-</div>
