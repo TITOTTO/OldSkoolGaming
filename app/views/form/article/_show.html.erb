@@ -1,5 +1,22 @@
-  
+<%if @article.images.attached?%>
+  <% i = 0 %> <!-- Ce sera l'ID de l'image dans le tableau d'image -->
+  <% @article.images.each do |image|%>
+    <%= image_tag image, alt: 'avatar' %> 
+    <%= link_to 'Remove', article_image_path(@article.id, image.id, task_id: i), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% i = i + 1 %>
+  <% end %>
+  <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
+    <%= form.file_field :image %> 
+    <%= submit_tag "mettre à jour" %> 
+  <% end %> 
+<%else%> 
+  <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
+    <%= form.file_field :image %> 
+    <%= submit_tag "mettre à jour" %> 
+  <% end %>    
+<%end%> 
 
+<%= form_with url: "/articles/#{params[:id]}", method: :put do |form| %>
 
   <div class="form-group mb-3 mt-3 col-sm">
   <%= @article.title %>
