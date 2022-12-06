@@ -17,7 +17,7 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
   def create_cart
-    Cart.create(user: self)
+    Cart.create(user: self, total: 0)
   end
   
 end

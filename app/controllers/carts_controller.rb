@@ -13,7 +13,10 @@ class CartsController < ApplicationController
   # POST /carts or /carts.json
   def create
     @user = current_user
-    ArticleCart.create!(cart: @user.cart, article_id: params[:article])
+    @art = ArticleCart.create!(cart: @user.cart, article_id: params[:article])
+    @total = @art.article.price + Cart.find(@user.cart.id).total
+    @c = Cart.find(@user.cart.id)
+    @c.update(total: @total)
     redirect_to user_carts_path(current_user)
   end
 
