@@ -6,17 +6,30 @@
   <!-- Le code ici a pour but de ne montrer que les articles que l'on recherche grace aux filtres 
         Parameters: {"console"=>"PS1", "typeofgame"=>"Console"}  Ce qui signifie, si aucun filtre n'existe, donc on affiche tout
         else   Si on rentre dans la condition else, cela signifie qu'il y a un filtre, dans ce cas on affiche pas tout -->
-        <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-        </div>
-        <h3 class="fs-2"><%= article.title %></h3>
-        <p><%= article.content %></p>
-        <%= link_to "Voir cet article", article_path(article), class:"icon-link d-inline-flex align-items-center" %>
-        <% if current_user %>
-        <%= link_to "Ajouter au panier", article_path(article), class:"icon-link d-inline-flex align-items-center" %>
-        <% end %>
-          <%= article.price %> Euros
+<div class="col-md-6 col-lg-4 pb-3">
+  <div class="card card-custom bg-white border-white border-0" style="height: 30rem">
+    <div class="card-custom-avatar align-self-center">
+      <img class="img-fluid" src="http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg" alt="Avatar" style="height: 10rem" />
+    </div>
+    <div class="card-body">
+      <div class="clearfix mb-3">
+        <span class="float-start badge rounded-pill bg-primary"><%= article.title %></span>
+        <span class="float-end price-hp"><%= article.price %> €</span>
       </div>
+    </div>
+    <div class="card-body" style="overflow-y: auto">
+        <p class="card-text"><%= article.content %></p>
+    </div>
+    <div class="card-footer" style="background: inherit; border-color: inherit;">
+      <%= link_to "Voir cet article", article_path(article), class:"btn bg-gradient-primary" %>
+      <% if current_user %>
+      <%= form_with url: "/user/#{current_user.id}/carts", method: :post do |form| %>
+        <%= hidden_field_tag :article, article.id %>
+        <%= form.submit 'Mettre au panier', :class => 'btn btn-success' %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
   <% end %>

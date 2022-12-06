@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root to: "articles#index"
+  get '/old', to: 'static_pages#old_skool_gaming'
+  get '/kit', to: 'static_pages#kit_ui'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

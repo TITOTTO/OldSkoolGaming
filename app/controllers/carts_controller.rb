@@ -3,15 +3,18 @@ class CartsController < ApplicationController
 
   def index
     @user = current_user
+    @cart = @user.cart
     @total = 0
-    @user.carts.each do |cart| # On passe sur tous les articles pour récupérer le total des prix
-      @total = @total + cart.article.price
+    @cart.articles.each do |article|
+      @total = @total + article.price
     end
   end
 
   # POST /carts or /carts.json
   def create
-
+    puts params
+    @user = current_user
+    ArticleCart.create!(cart: @user.cart, article_id: params[:article])
   end
 
   def destroy
