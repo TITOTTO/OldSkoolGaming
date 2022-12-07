@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  before_action :is_admin?, only: [:index]
   def index
     @user = User.all
   end
@@ -12,6 +13,10 @@ class UserController < ApplicationController
   end
 
   def update
+  end
+
+  def is_admin?
+    redirect_to root_path if current_user.admin == false
   end
 
 end
