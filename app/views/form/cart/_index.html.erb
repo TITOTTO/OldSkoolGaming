@@ -3,11 +3,30 @@
 
 <% @user.cart %>  <!-- On liste tous les articles de l'utilisateur connecté -->
 
-
-
-  <% @cart.articles.each do |article| %>
-    <%= article.title %>: <%= article.content %>,<%= article.price %>
-  <% end %>
-  <br>
-<p> Votre total est de :<%= @total %> </p>
+<div class="container">	
+	<div class="card">
+		<div class="table-responsive">
+			<table class="table align-items-center mb-0">
+			  <thead>
+			    <tr>
+			      <th scope="col">ID</th>
+			      <th scope="col">Avatar</th>
+			      <th scope="col">Produit</th>
+			      <th scope="col">Prix</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% @cart.articles.each do |article| %>
+			    <tr>
+			      <th scope="row"><%= article.id %></th>
+			      <td><%= image_tag article.images[0], width: "50rem" if article.images.attached? %></td>
+			      <td><%= link_to article.title, article_path(article) %></td>
+			      <td><%= article.price %></td>
+			    </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
 

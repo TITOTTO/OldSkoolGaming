@@ -1,45 +1,67 @@
-<%if @article.images.attached?%>
-  <% i = 0 %> <!-- Ce sera l'ID de l'image dans le tableau d'image -->
-  <% @article.images.each do |image|%>
-    <%= image_tag image, alt: 'avatar' %> 
-    <%= link_to 'Remove', article_image_path(@article.id, image.id, task_id: i), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-    <% i = i + 1 %>
-  <% end %>
-  <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
-    <%= form.file_field :image %> 
-    <%= submit_tag "mettre à jour" %> 
-  <% end %> 
-<%else%> 
-  <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
-    <%= form.file_field :image %> 
-    <%= submit_tag "mettre à jour" %> 
-  <% end %>    
-<%end%> 
-
-<%= form_with url: "/articles/#{params[:id]}", method: :put do |form| %>
-
-  <div class="form-group mb-3 mt-3 col-sm">
-  <%= @article.title %>
-    <%= form.text_field :title, class:"form-control", placeholder:"Nom" %>
-  </div>
-
-  <div class="form-group mb-3 mt-3 col-sm">
-  <%= @article.content %>
-    <%= form.text_field :description, class:"form-control", placeholder:"Description" %>
-  </div>
+<div class="container px-4 py-5" id="featured-3">
+   
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-6 text-center">
+    <%if @article.images.attached?%>
+        <% i = 0 %> <!-- Ce sera l'ID de l'image dans le tableau d'image -->
+        <% @article.images.each do |image|%>
+      <div class="feature col"> 
+      <div class="col">    
+        <%= image_tag image, alt: 'avatar', class: "img-fluid", style: 'height:10;width:12rem;' %> 
+      </div>
+      <div class="col">  
+        <%= link_to 'Remove', article_image_path(@article.id, image.id, task_id: i), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% i = i + 1 %>
+      </div> 
+      </div>
+      <% end %> 
+    </div>
+  </div>    
 
 
-  <div class="form-group mb-3 mt-3 col-sm">
-  <%= @article.console %>
-    <%= form.text_field :console, class:"form-control", placeholder:"Console" %>
-  </div>
 
-  <div class="form-group mb-3 mt-3 col-sm">
-  <%= @article.price %>
-    <%= form.text_field :price, class:"form-control", placeholder:"Prix" %>
-  </div>
-  
+  <div class="container px-4 py-5" id="featured-3">
+   <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
+              <%= form.file_field :image %> 
+              <%= submit_tag "Valider la photo" %> 
+          <% end %> 
+     <%else%> 
+          <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
+              <%= form.file_field :image %> 
+              <%= submit_tag "Valider la photo" %> 
+          <% end %>    
+     <%end%>
+ </div>
 
+<%= form_with url: "/articles/#{params[:id]}", method: :put do |form| %>   
 <% end %>
 
-<br><br>
+<div class="container mt-5 mb-5">
+
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="row p-2 bg-white border rounded">
+                
+                <div class="col-md-6 mt-1">
+                    <h5><%= @article.title %></h5>
+                    <div class="d-flex flex-row">
+                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span><%= @article.console %></span>
+                    </div>
+                    
+                    <p class="text-justify text-truncate para mb-0"><%= @article.content %><br><br></p>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1"><%= @article.price %> €</h4>
+                    </div>
+                    <h6 class="text-success">Frais de port gratuits</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Ajouter au panier</button></div>
+                </div>
+              </div>            
+            </div>
+        </div>
+    </div>
+</div>
+
+                          
+
+           
