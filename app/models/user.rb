@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+  validates :name, :encrypted_password, :email, presence: true
+  validates :name, length: { minimum: 2 }
+  validates :encrypted_password, length: { in: 5..20 }
+  validates :encrypted_password, confirmation: true, unless: -> { encrypted_password.blank? }
+  validates :email, uniqueness: true
+    
   #after_create :welcome_send
   #after_create :create_cart
   # Include default devise modules. Others available are:
