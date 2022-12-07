@@ -22311,9 +22311,7 @@ html {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.navbar.navbar-transparent .navbar-toggler .navbar-toggler-icon .navbar-toggler-bar {
-  background: #fff;
-}
+
 
 .navbar.navbar-transparent .navbar-collapse {
   border-radius: 1rem;
@@ -22367,7 +22365,6 @@ html {
   width: 22px;
   height: 1px;
   border-radius: 1px;
-  background: #6c757d;
   transition: all 0.2s;
   margin: 0 auto;
 }
