@@ -1,7 +1,7 @@
 <!-- Ne pas afficher l'article si article.buyer est différent de nil (Donc s'il a été acheté) -->
 <!-- if article.buyer != nil -->
 
-
+<div class="row">
   <% @articles.each do |article| %>
   <!-- Le code ici a pour but de ne montrer que les articles que l'on recherche grace aux filtres 
         Parameters: {"console"=>"PS1", "typeofgame"=>"Console"}  Ce qui signifie, si aucun filtre n'existe, donc on affiche tout
@@ -33,3 +33,4 @@
 </div>
 
   <% end %>
+</div>
