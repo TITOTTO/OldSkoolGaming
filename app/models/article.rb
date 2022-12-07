@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  validates :title, :content, :price, :console, :typeofgame, : true
+  validates :title, :content, :price, :console, :typeofgame, presence: true
   validates :price, numericality: { message: "%{value} semble incorrect" }
 
     
