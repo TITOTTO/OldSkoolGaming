@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create, :destroy]
   end
   devise_for :users
+  resources :modifications, only: [:update]
   root to: "articles#index"
   get '/old', to: 'static_pages#old_skool_gaming'
   get '/kit', to: 'static_pages#kit_ui'
