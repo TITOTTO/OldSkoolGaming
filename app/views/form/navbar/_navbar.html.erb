@@ -27,7 +27,7 @@
         <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-dark rounded-pill order-0 fw-bold"%>
       </li>
       <li class="nav-item">
-        <%= link_to "PANIER / #{current_user.cart.total} €", user_carts_path(current_user), class:"btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0" %>
+        <%= link_to "PANIER / #{current_user.cart.total.to_f} €", user_carts_path(current_user), class:"btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0" %>
       </li>
     </ul>
     </div>
