@@ -21,7 +21,12 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    ArticleCart.find(params[:article]).destroy
+    @art = ArticleCart.find(params[:article_id])
+    @c = Cart.find(current_user.cart.id)
+    @total = @c.total - @art.article.price
+    @c.update(total: @total)
+    @art.destroy
+    redirect_to user_carts_path(current_user)
   end
 
   def checklog

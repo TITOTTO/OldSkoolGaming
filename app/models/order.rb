@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
     after_create :order_mail_buy
     after_create :order_sell_buy
+
     belongs_to :user
     has_many :article_orders
     has_many :articles, through: :article_orders
