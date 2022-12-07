@@ -29,7 +29,7 @@ class User < ApplicationRecord
     if self.id == 1
     self.update(admin: true)
     end
-
   end
+
   
 end
