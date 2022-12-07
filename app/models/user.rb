@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  after_create :welcome_send
+  #after_create :welcome_send
   after_create :create_cart
+  after_create :set_admin
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,8 +19,17 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
+
   def create_cart
     Cart.create(user: self, total: 0)
+  end
+
+  def set_admin
+
+    if self.id == 1
+    self.update(admin: true)
+    end
+
   end
   
 end
