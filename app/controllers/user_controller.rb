@@ -13,7 +13,6 @@ class UserController < ApplicationController
   end
 
   def update
-    
     @user = User.find(params[:user_id])
     if @user.admin == true
       @user.update(admin: false) 
