@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
     def new
-
     end
   
 
@@ -24,12 +23,13 @@ class OrdersController < ApplicationController
         redirect_to new_order_path
       end
       # After the rescue, if the payment succeeded
-      Order.create(stripetoken: params[:stripeToken], price: @stripe_amount, user: @user)
+      Order.create(stripetoken: params[:stripeToken], price: @stripe_amount, user: @user)  # Création de la commande si le paiement est passé
       @user.cart.article_carts.each do |cart|
-        ArticleOrder.create!(order: Order.last, article: cart.article)
-        cart.destroy
+        ArticleOrder.create!(order: Order.last, article: cart.article)  # Permet d'associer tous les articles à la commande
+        Article.find(cart.article.id).update(buyer: @user)  # Je met l'acheteur sur l'article histoire qu'ils ne puissent plus être acheté
+        cart.destroy  # On supprimer le tampon entre le caddie et l'article
       end
-
+      @user.cart.update(total: 0) # On pense bien à mettre le total du caddie à 0 !
       redirect_to new_order_path
     end
 end

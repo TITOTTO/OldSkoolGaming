@@ -1,1 +1,3 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<h2>Merci pour le commande numéro : <%= current_user.orders.last.id %></h2>
+<h2>Tu viens de perdre <%= current_user.orders.last.price %> €</h2>
+<h2> Merci ! <%= current_user.email %> </h2>
