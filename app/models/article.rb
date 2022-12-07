@@ -1,4 +1,8 @@
 class Article < ApplicationRecord
+  validates :title, :content, :price, :console, :typeofgame, : true
+  validates :price, numericality: { message: "%{value} semble incorrect" }
+
+    
     enum :typeofgame, [:Jeux_video, :Console]
     enum :console, [:SNES, :PS1, :SEGA]
     belongs_to :seller, class_name: "User"
