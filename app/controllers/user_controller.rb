@@ -13,7 +13,7 @@ class UserController < ApplicationController
   end
 
   def update
-    puts "jdnklmpùa*,lzvkk"
+    
     @user = User.find(params[:user_id])
     if @user.admin == true
       @user.update(admin: false) 
@@ -33,6 +33,7 @@ class UserController < ApplicationController
     @user.destroy
     redirect_to user_index_path
   end
+
 
 
 end
