@@ -103,7 +103,7 @@ body{
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+<%= form_with url: "/modifications/#{@user.id}", method: :patch do |form| %>
 <div class="container emp-profile">
             <form method="post">
                 <div class="row">
@@ -132,7 +132,6 @@ body{
                             </ul>
                         </div>
                     </div>
-                    <%= form_with url: modification_path(@user), method: :patch do |form| %>
                     <div class="col-md-2">
                         <%= form.submit 'Edit', :class => 'profile-edit-btn' %>
                     </div>
@@ -187,7 +186,7 @@ body{
                                             </div>
                                             </div>
                                         </div>
-                                        <% end %>
+                                        
                                 </div>
                             
                             </div>
@@ -196,3 +195,4 @@ body{
                 </div>
             </form>           
         </div>
+        <% end %>
