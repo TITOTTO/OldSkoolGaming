@@ -1,8 +1,4 @@
 <h1> Votre panier </h1>
-
-
-<% @user.cart %>  <!-- On liste tous les articles de l'utilisateur connecté -->
-
 <div class="container">	
 	<div class="card">
 		<div class="table-responsive">
@@ -13,6 +9,7 @@
 			      <th scope="col">Avatar</th>
 			      <th scope="col">Produit</th>
 			      <th scope="col">Prix</th>
+			      <th scope="col">Retirer l'article</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -22,10 +19,34 @@
 			      <td><%= image_tag article.images[0], width: "50rem" if article.images.attached? %></td>
 			      <td><%= link_to article.title, article_path(article) %></td>
 			      <td><%= article.price %></td>
+			      <td><%= link_to "X", user_cart_path(current_user, current_user.cart, article_id: article.id), method: :delete, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </td>
 			    </tr>
 			    <% end %>
 			  </tbody>
 			</table>
+
+			<p class="text-right">
+			<%= form_tag orders_path do %>
+				<article>
+				<% if flash[:error].present? %>
+					<div id="error_explanation">
+					<p><%= flash[:error] %></p>
+					</div>
+				<% end %>
+				<label class="amount">
+					<span>Total : <%= @cart.total %> €</span>
+				</label>
+				</article>
+				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+					data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+					data-description="Achat d'un produit"
+					data-amount="<%= @cart.total * 100 %>"
+					data-label="Payer"
+					data-locale="auto">
+				</script>
+			<% end %>
+			</p>
+
 		</div>
 	</div>
 </div>

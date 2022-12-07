@@ -2,6 +2,7 @@ class User < ApplicationRecord
   #after_create :welcome_send
   after_create :create_cart
   after_create :set_admin
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,6 +13,7 @@ class User < ApplicationRecord
   has_many :my_purchases, foreign_key: 'buyer_id', class_name: "Article"
   has_one :cart
   has_many :comments
+  has_many :orders
 
 
   def welcome_send
