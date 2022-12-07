@@ -1,9 +1,13 @@
+<h1> Votre panier </h1>
+
+
 <% @user.cart %>  <!-- On liste tous les articles de l'utilisateur connecté -->
-<%= cart.total_value %>
 
 
-  <% cart.articles.each do |article| %>
-    <%= article.title %>: <%= article.content %> x <%= article.price %> = <%= article.total_price %>
+
+  <% @cart.articles.each do |article| %>
+    <%= article.title %>: <%= article.content %>,<%= article.price %>
   <% end %>
-
+  <br>
+<p> Votre total est de :<%= @total %> </p>
 

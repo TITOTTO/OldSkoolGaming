@@ -6,7 +6,7 @@ class CartsController < ApplicationController
     @cart = @user.cart
     @total = 0
     @cart.articles.each do |article|
-      @total = @total + article.price
+      @total = @total + article.price.to_i
     end
   end
 
