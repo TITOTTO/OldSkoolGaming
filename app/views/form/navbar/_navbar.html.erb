@@ -24,6 +24,11 @@
       <li class="nav-item">
         <%= link_to "Mon compte", user_path(current_user), class:"btn order-0 fw-bold" %>
       </li>
+      <% if current_user.admin == true %>
+      <li class="nav-item">
+        <%= link_to "Admin", user_index_path, class:"btn order-0 fw-bold" %>
+      </li>
+      <% end %>
         <li class="nav-item">
         <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-dark rounded-pill order-0 fw-bold"%>
       </li>
