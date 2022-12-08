@@ -21,6 +21,7 @@ class UserController < ApplicationController
     end
     redirect_to user_index_path
   end
+  
 
   def is_admin?
     redirect_to root_path if current_user.admin == false
@@ -34,5 +35,5 @@ class UserController < ApplicationController
   end
 
 
-
+  
 end

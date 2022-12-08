@@ -102,13 +102,21 @@
 <!------ Include the above in your HEAD tag ---------->
 <%= form_with url: "/modifications/#{@user.id}", method: :patch do |form| %>
 <div class="container emp-profile">
-            <form method="post">
+            <div class="container" >
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="field"> 
-                            <%= form.label :avatar %>              
-                            <%= form.file_field :avatar %>                        
+                        <div class="profile-img">
+                        
+                            <% if @user.avatar.attached? %>
+                            <%= image_tag @user.avatar %>
+                            
+                            
+                            <%end%>
+                           
                         </div>
+                       
+                        
+                        
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
@@ -187,6 +195,6 @@
                         </div>
                     </div>
                 </div>
-            </form>           
+            </div>           
         </div>
         <% end %>
