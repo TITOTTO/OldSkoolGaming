@@ -105,12 +105,9 @@
             <form method="post">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="https://media.istockphoto.com/id/1307387607/vector/anonymous-vector-icon-incognito-sign-privacy-concept-human-head-with-glitch-face-personal.jpg?s=612x612&w=0&k=20&c=gABTCg7-xeCyeWDF-JnNzPbpnCeTX8wH-TxIYdkC0yQ=" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
+                        <div class="field"> 
+                            <%= form.label :avatar %>              
+                            <%= form.file_field :avatar %>                        
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -179,7 +176,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%= @user.description %>
-                                                <%= form.text_area :description, size: "35*3" %> </p>
+                                                <%= form.text_area :description, size: "30*3" %> </p>
                                             </div>
                                             </div>
                                         </div>

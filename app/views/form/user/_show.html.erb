@@ -107,11 +107,12 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://media.istockphoto.com/id/1307387607/vector/anonymous-vector-icon-incognito-sign-privacy-concept-human-head-with-glitch-face-personal.jpg?s=612x612&w=0&k=20&c=gABTCg7-xeCyeWDF-JnNzPbpnCeTX8wH-TxIYdkC0yQ=" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
+                            <% if @user.avatar.attached? %>
+                            <%= image_tag @user.avatar, width: "200px"%>
+                            <% else %>
+                            <img src="https://cdn1.iconfinder.com/data/icons/video-games-flat-design-video-game-icon-with-simpl/114/gaming-boy-512.png">
+                            <%end%>
+                           
                         </div>
                     </div>
                     <div class="col-md-6">
