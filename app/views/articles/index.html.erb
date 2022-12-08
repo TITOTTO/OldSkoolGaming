@@ -1,7 +1,6 @@
 <% if flash[:error] %>
   <div class="notice", style="color: red"><%= flash[:error] %></div>
 <% end %>
-
 <%= render "form/header/header" %>
 
       <!-- Partie filtre -->
@@ -20,9 +19,16 @@
       </div>
 
 <p class="text-uppercase font-weight-bold">Cards</p>
-  
-    <%= render "form/article/allarticle" %>  <!-- A modifier -->
-
+<div class="row">
+  <% @articles.each do |article| %>
+    <% if article.buyer != nil %>
+    <% elsif params.include?(:console) == false && params.include?(:typeofgame) == false %> <!-- Si y'a aucun filtre -->
+      <%= render partial: "form/article/allarticle", locals: { article: article } %>
+    <% elsif article.console == params[:console] || article.typeofgame == params[:typeofgame] %> <!-- Si y'a un filtre -->
+      <%= render partial: "form/article/allarticle", locals: { article: article } %>
+    <% end %>
+  <% end %>
+</div>
 
 
 <%= link_to "New article", new_article_path %>

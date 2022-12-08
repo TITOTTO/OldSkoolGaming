@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :welcome_send
+  #after_create :welcome_send
   after_create :create_cart
   after_create :set_admin
 
@@ -29,7 +29,7 @@ class User < ApplicationRecord
     if self.id == 1
     self.update(admin: true)
     end
-
   end
+
   
 end
