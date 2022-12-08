@@ -42,7 +42,7 @@
             <div class="row p-2 bg-white border rounded">
                 
                 <div class="col-md-6 mt-1">
-                    <h5><%= @article.title %></h5>
+                    <h5><%= @article.title %></h5> 
                     <div class="d-flex flex-row">
                         <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span><%= @article.console %></span>
                     </div>
@@ -54,7 +54,12 @@
                         <h4 class="mr-1"><%= @article.price %> €</h4>
                     </div>
                     <h6 class="text-success">Frais de port gratuits</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Ajouter au panier</button></div>
+
+                    <%= form_with url: "/user/#{current_user.id}/carts", method: :post do |form| %>
+                <%= hidden_field_tag :article, @article.id %>
+                <%= form.submit 'Mettre au panier', :class => 'btn btn-success' %>
+              <% end %>
+
                 </div>
               </div>            
             </div>

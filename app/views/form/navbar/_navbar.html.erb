@@ -1,6 +1,7 @@
-  <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow  my-3 py-2 start-0 end-0 mx-4" aria-label="Eighth navbar example">
+  <nav class="navbar navbar-expand-lg navbar-dark mask-custom shadow-0 bg-hugo">
     <div class="container">
-      <a class="navbar-brand font-weight-bolder ms-sm-3" href="/">OLD SKOOL GAMING (logo)</a>
+      <%= image_tag "https://i.gifer.com/4dg6.gif", class:"img-fluid", style:"height: 5rem" %>
+      <a class="navbar-brand text-white font-weight-bolder ms-sm-3" href="/">OLD SKOOL GAMING</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,7 +13,7 @@
           </li>
           <li class="nav-item">
             <%= link_to "OLD SKOOL GAMING", old_path, class:"nav-link active" %>
-          </li>
+          </li>       
           <li class="nav-item">
             <%= link_to "KIT UI", kit_path, class:"nav-link active" %>
           </li>
@@ -23,15 +24,29 @@
       <li class="nav-item">
         <%= link_to "Mon compte", user_path(current_user), class:"btn order-0 fw-bold" %>
       </li>
+      <% if current_user.admin == true %>
+      <li class="nav-item">
+        <%= link_to "Admin", user_index_path, class:"btn order-0 fw-bold" %>
+      </li>
+      <% end %>
         <li class="nav-item">
         <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-dark rounded-pill order-0 fw-bold"%>
       </li>
+      <li class="nav-item">
+        <%= link_to "Nouvel article", new_article_path, class:"btn btn-dark rounded-pill order-0 fw-bold "%>
+        </li>
       <li class="nav-item">
         <%= link_to "PANIER / #{current_user.cart.total.to_f} €", user_carts_path(current_user), class:"btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0" %>
       </li>
     </ul>
     </div>
   <% else %>
+  <div class="collapse navbar-collapse" id="navbarsExample07">
+      <li class="nav-item">
+        <%= link_to "Nouvel article", new_user_session_path, class:"text-white nav-link active "%>
+        </li>
+      </div>
+  
     <div class="d-flex py-3">
       <li class="nav-item ">
         <%= link_to "Log in", new_user_session_path, class:"btn btn-dark rounded-pill order-0 fw-bold" %>
