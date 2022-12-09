@@ -1,0 +1,19 @@
+  <%= form_with(model: thecomment) do |form| %>
+
+   
+      
+
+   <%= form.hidden_field :user_id %>
+
+   <%= form.label :title, "Title:" %>
+   <%= form.text_area :title %>
+
+   <%= form.label :text, "Text:" %>
+   <%= form.text_area :text %>
+
+   <div class="actions">
+    <%= form.submit %>
+   </div>
+  <% end %>
+
+

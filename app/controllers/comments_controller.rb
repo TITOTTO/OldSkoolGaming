@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
 
-
   def create
     Comment.create(title: params[:title], content: params[:content], user: current_user, commentable_id: params[:commentable_id], commentable_type: params[:commentable_type])
   end
