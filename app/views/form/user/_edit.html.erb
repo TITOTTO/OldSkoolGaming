@@ -97,7 +97,7 @@
 @user.my_purchases permet de voir ce que l'on a déjà acheté -->
 
 
-<%= form_with url: "/modifications/#{@user.id}", method: :patch do |form| %>
+
 <div class="container emp-profile">
             <div class="container" >
                 <div class="row">
@@ -105,14 +105,15 @@
                         <div class="profile-img">
                             <%if @user.avatar.attached?%>
                                 <%= image_tag @user.avatar, alt: 'avatar' %>
+                            <% else %>
+                                <img src="https://media.istockphoto.com/id/1307387607/vector/anonymous-vector-icon-incognito-sign-privacy-concept-human-head-with-glitch-face-personal.jpg?s=612x612&w=0&k=20&c=gABTCg7-xeCyeWDF-JnNzPbpnCeTX8wH-TxIYdkC0yQ=" alt=""/>
                             <% end %>
-                            <!--
-                            <%= form_with url: user_avatars_path(@user), multipart: true do |form| %> < Ce formulaire marche niquel 
+                            <%= form_with url: user_avatars_path(@user), multipart: true do |form| %> <!-- Ce formulaire marche niquel ! -->
                                 <%= form.file_field :avatar %>
                                 <%= submit_tag "mettre à jour" %>
-                            <% end %>-->
+                            <% end %>
                         </div>
-                        
+                        <%= form_with url: "/modifications/#{@user.id}", method: :patch do |form| %>
                         
                     </div>
                     <div class="col-md-6">

@@ -109,10 +109,7 @@
                             <% else %>
                                 <img src="https://media.istockphoto.com/id/1307387607/vector/anonymous-vector-icon-incognito-sign-privacy-concept-human-head-with-glitch-face-personal.jpg?s=612x612&w=0&k=20&c=gABTCg7-xeCyeWDF-JnNzPbpnCeTX8wH-TxIYdkC0yQ=" alt=""/>
                             <% end %>
-                            <%= form_with url: user_avatars_path(@user), multipart: true do |form| %> <!-- Le code à partir d'ici ne fonctionne pas car la route refuse d'être la bonne -->
-                                <%= form.file_field :avatar %>
-                                <%= submit_tag "mettre à jour" %>
-                            <% end %>                                                                 <!-- Le code jusqu'ici ne fonctionne pas car la route refuse d'être la bonne -->
+                            
                         </div>
                      
                     </div>
