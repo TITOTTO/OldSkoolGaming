@@ -11,28 +11,29 @@
     </div>
   <% end %>
 
+  
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :"Quel est le titre de l'annonce?", style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
+    <%= form.label :"Description de l'article", style: "display: block" %>
     <%= form.text_area :content %>
   </div>
 
   <div>
-    <%= form.label :price, style: "display: block" %>
+    <%= form.label :prix, style: "display: block" %>
     <%= form.number_field :price %>
   </div>
 
   <div>
-    <%= form.label :typeofgame %>
+    <%= form.label :"Choisissez une catégorie" %>
     <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}, article.typeofgame) %>
   </div>
 
   <div>
-    <%= form.label :console %>
+    <%= form.label :"Modèle de Console" %>
     <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}, article.console) %>
   </div>
 

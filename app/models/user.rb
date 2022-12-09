@@ -31,6 +31,6 @@ class User < ApplicationRecord
     self.update(admin: true)
     end
   end
-
+  
   
 end

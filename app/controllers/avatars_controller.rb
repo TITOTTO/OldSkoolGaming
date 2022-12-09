@@ -10,5 +10,8 @@ class AvatarsController < ApplicationController
         @user.avatar.purge
         redirect_to(user_path(@user))
     end
+
+   
+    
   end
   
