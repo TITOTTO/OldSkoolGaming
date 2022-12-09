@@ -11,8 +11,9 @@
     </div>
   <% end %>
 
+  
   <div>
-    <%= form.label :"Titre de l'article", style: "display: block" %>
+    <%= form.label :"Quel est le titre de l'annonce?", style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
@@ -27,12 +28,12 @@
   </div>
 
   <div>
-    <%= form.label :"Catégorie" %>
+    <%= form.label :"Choisissez une catégorie" %>
     <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}, article.typeofgame) %>
   </div>
 
   <div>
-    <%= form.label :Console %>
+    <%= form.label :"Modèle de Console" %>
     <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}, article.console) %>
   </div>
 
