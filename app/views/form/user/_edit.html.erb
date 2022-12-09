@@ -96,20 +96,21 @@
 <!-- @user.my_articles permet de voir ce que l'on a en vente
 @user.my_purchases permet de voir ce que l'on a déjà acheté -->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
 <%= form_with url: "/modifications/#{@user.id}", method: :patch do |form| %>
 <div class="container emp-profile">
             <div class="container" >
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <div class="field">
-                            <%= form.label :avatar %>
-                            <%= form.file_field :avatar %>
-                            </div>
+                            <%if @user.avatar.attached?%>
+                                <%= image_tag @user.avatar, alt: 'avatar' %>
+                            <% end %>
+                            <!--
+                            <%= form_with url: user_avatars_path(@user), multipart: true do |form| %> < Ce formulaire marche niquel 
+                                <%= form.file_field :avatar %>
+                                <%= submit_tag "mettre à jour" %>
+                            <% end %>-->
                         </div>
                         
                         

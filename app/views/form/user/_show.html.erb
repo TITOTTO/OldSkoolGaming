@@ -97,17 +97,22 @@
 <!-- @user.my_articles permet de voir ce que l'on a en vente
 @user.my_purchases permet de voir ce que l'on a déjà acheté -->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
+                            
 <div class="container emp-profile">
             <div class="container" >
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                        <%= image_tag @user.avatar if @user.avatar.attached? %>
+                            <%if @user.avatar.attached?%> 
+                                <%= image_tag @user.avatar, alt: 'avatar' %>
+                            <% else %>
+                                <img src="https://media.istockphoto.com/id/1307387607/vector/anonymous-vector-icon-incognito-sign-privacy-concept-human-head-with-glitch-face-personal.jpg?s=612x612&w=0&k=20&c=gABTCg7-xeCyeWDF-JnNzPbpnCeTX8wH-TxIYdkC0yQ=" alt=""/>
+                            <% end %>
+                            <%= form_with url: user_avatars_path(@user), multipart: true do |form| %> <!-- Le code à partir d'ici ne fonctionne pas car la route refuse d'être la bonne -->
+                                <%= form.file_field :avatar %>
+                                <%= submit_tag "mettre à jour" %>
+                            <% end %>                                                                 <!-- Le code jusqu'ici ne fonctionne pas car la route refuse d'être la bonne -->
                         </div>
                      
                     </div>
