@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :thecomments
   resources :comments, only: [:create, :destroy, :update]
   resources :articles do
     resources :images, only: [:create, :destroy]

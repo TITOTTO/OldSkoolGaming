@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_one :cart
   has_many :comments
   has_many :orders
+  has_many :thecomments
 
 
   def welcome_send

@@ -6,6 +6,12 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @thecomment = @user.thecomments.build
+
+  end
+
+  def show_me
+    @thecomment = @user.thecomments.build
   end
 
   def edit
@@ -32,6 +38,10 @@ class UserController < ApplicationController
     @user.cart.destroy
     @user.destroy
     redirect_to user_index_path
+  end
+
+  def user_params
+    params.require(:user)
   end
 
 
