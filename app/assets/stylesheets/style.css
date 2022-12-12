@@ -1,6 +1,6 @@
 body {
     background-size: 100%; 
-    background-image: url("https://i.ibb.co/mRGS95f/DALL-E-2022-12-12-09-59-14-salle-de-jeu-synthwave-games-80-s.png");    
+    background-image: url("https://i.pinimg.com/736x/72/80/d4/7280d4485402dcd134af2788fe96c884.jpg");    
     background-attachment: fixed;
     margin:0px;
     padding:0px;
@@ -235,5 +235,5 @@ body {
 }
 
 .zoom:hover {
-  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

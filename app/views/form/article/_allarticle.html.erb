@@ -6,11 +6,11 @@
           Parameters: {"console"=>"PS1", "typeofgame"=>"Console"}  Ce qui signifie, si aucun filtre n'existe, donc on affiche tout
           else   Si on rentre dans la condition else, cela signifie qu'il y a un filtre, dans ce cas on affiche pas tout -->
       <div class="col-md-6 col-lg-3 p-5">
-         <div class="text-gradient text-dark fw-bold">
-          <%= article.title %> 
+      <div class="card border border-2 border-primary zoom" style="width: 15rem;">
+        <div class="fw-bold text-dark">
+          <%= article.title %>
         </div>
-      <div class="card border border-2 border-primary" style="width: 15rem;">
-  <%= link_to image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300"), article_path(article), class:"zoom" %>
+  <%= link_to image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300"), article_path(article) %>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <div class="clearfix mb-3">
