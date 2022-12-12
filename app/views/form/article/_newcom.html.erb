@@ -4,11 +4,11 @@
   <%= hidden_field_tag :commentable_id, params[:id] %>
   <%= hidden_field_tag :commentable_type, "Article" %>
 
-  <%= form.label :title, "Titre du commentaire" %><br>
+  <h6><%= form.label :title, "Titre du commentaire" %></h6>
   <%= form.text_field :title %><br>
 
-  <%= form.label :content, "Commentaire" %><br>
-  <%= form.text_area :content %><br>
-
+  <h6><%= form.label :content, "Commentaire" %></h6>
+  <%= form.text_area :content %> 
+  <br> 
   <%= form.submit "Envoyer" %>
 <% end %>
