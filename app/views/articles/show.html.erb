@@ -2,8 +2,15 @@
 
 <%= render "form/article/show" %>
 
-<%= render "form/article/comments" %>
-
+<div class="commentaire">
+  <%= render "form/article/newcom" %>
+</div>
+<%= link_to "Mettre un commentaire", nil , remote: true, class: "btn btn-danger", data: {controller: "comments", action: "comments#toggleForm"}%>
+<!-- <%= render "form/article/comments" %> -->
+<% @comments.each do |comment| %>
+<%= comment.title%>
+<%= comment.content%>
+<% end %>
 
 <div class="container bootdey">
   <div class="col-md-12">

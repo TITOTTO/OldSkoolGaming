@@ -1,5 +1,6 @@
 <%= form_with url: "/comments", method: :post do |form| %>
 
+  <%= hidden_field_tag :article_id, params[:id] %>
   <%= hidden_field_tag :commentable_id, params[:id] %>
   <%= hidden_field_tag :commentable_type, "Article" %>
 
