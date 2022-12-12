@@ -7,9 +7,19 @@
 </div>
 <%= link_to "Mettre un commentaire", nil , remote: true, class: "btn btn-danger", data: {controller: "comments", action: "comments#toggleForm"}%>
 <!-- <%= render "form/article/comments" %> -->
+
+
 <% @comments.each do |comment| %>
-<%= comment.title%>
-<%= comment.content%>
+
+<div class="card card-custom bg-white border-white border-0" style="height: auto">
+<div class="card-body" style="overflow-y: auto">
+
+<h5 class="text-center">Titre</h5>
+<p class="card-text text-center"><%= comment.title%></p>
+<h5 class="text-center">Commentaire</h5>
+<p class="card-text text-center"><%= comment.content%></p>
+</div>
+</div>
 <% end %>
 
 <div class="container bootdey">
