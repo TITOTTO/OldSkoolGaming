@@ -14,8 +14,15 @@
   <div class="card-body">
     <h5 class="card-title"></h5>
     <div class="clearfix mb-3">
+              <% if article.console == "SEGA"%>
+              <span class="float-start badge rounded-pill bg-gradient-info"><%= article.console %></span>
+              <% elsif article.console == "SNES"%>
               <span class="float-start badge rounded-pill bg-gradient-primary"><%= article.console %></span>
+              <% elsif article.console == "PS1"%>
+              <span class="float-start badge rounded-pill bg-gradient-dark"><%= article.console %></span>
+              <% end %>
               <span class="float-end price-hp fw-bold text-dark "><%= article.price %> €</span>
+              
             </div>
   </div>
 </div>
