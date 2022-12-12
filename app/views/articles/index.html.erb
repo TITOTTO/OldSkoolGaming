@@ -6,7 +6,7 @@
       <!-- Partie filtre -->
       <section class="bg-white">
       <div class="container">
-        <div class="h-100 p-5 ">
+        <div class="p-5 ">
         <%= form_with url: "/articles", method: :get do |form| %>
             <%= form.label :console %> <br />
             <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}) %> <br />
@@ -19,10 +19,10 @@
         </div>
       </div>
       </section>
-      <%= render "form/user/avatar" %>
+
 <section class="bg-white">
-<div class="container">
-  <div class="row">
+<div class="container ">
+  <div class="row ">
     <% @articles.each do |article| %>
     
       <% if article.buyer != nil %>
