@@ -23,7 +23,7 @@
     <div class="d-flex py-3">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <%= link_to "Mon compte", user_path(current_user), class:"btn order-0 fw-bold" %>
+        <%= link_to "Mon compte", user_path(current_user), class:"btn bg-gradient-light w-auto me-1 mb-0" %>
       </li>
       <% if current_user.admin == true %>
       <li class="nav-item">
@@ -31,7 +31,7 @@
       </li>
       <% end %>
         <li class="nav-item">
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-dark rounded-pill order-0 fw-bold"%>
+        <%= button_to "Deconnexion", destroy_user_session_path, method: :delete, class:"btn btn-dark rounded-pill order-0 fw-bold"%>
       </li>
       <li class="nav-item">
         <%= link_to "Nouvel article", new_article_path, class:"btn btn-dark rounded-pill order-0 fw-bold "%>
@@ -50,10 +50,10 @@
   
     <div class="d-flex py-3">
       <li class="nav-item ">
-        <%= link_to "Log in", new_user_session_path, class:"btn btn-dark rounded-pill order-0 fw-bold" %>
+        <%= link_to "Connexion", new_user_session_path, class:"btn btn-dark rounded-pill order-0 fw-bold" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path, class:"btn btn-dark rounded-pill order-0 fw-bold"  %>
+        <%= link_to "S'inscrire", new_user_registration_path, class:"btn btn-dark rounded-pill order-0 fw-bold"  %>
       </li>
     </div>
   <% end %>

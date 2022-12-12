@@ -21,11 +21,8 @@ a{
   text-decoration: none;
 }
 </style>
-
-
-
-     <div class="container-fluid">
-<p class="text-uppercase font-weight-bold">Hero</p>
+<div class="container-fluid">
+<p class="text-uppercase font-weight-bold"></p>
 <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
 
 <%# Hero page %>
@@ -39,7 +36,7 @@ a{
       </div>
       <div>
         <div class="row">
-          <div class="col-lg-4 col-md-7 d-flex justify-content-center flex-column">
+          <div class="col-lg-10 col-md-7 d-flex justify-content-center flex-column">
              <div class="text-center text-gradient text-primary">
 <h2>Inscris toi vite</h2>
 </div>
@@ -55,37 +52,31 @@ a{
               <img src="https://i.pinimg.com/736x/0a/ef/40/0aef407e30d3c372ba775a325902ced5.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                 width="200px" alt="profile">
             </div>
-            <div class="text-center">      
+            <div class="text-center ">      
               
-              <div class="field">
+              <div class="field col-4 mx-auto py-2">
                 <%= f.label :email %><br />
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
               </div>
                 
             </div>
             <div class="text-center"> 
-            <div class="field">
-                <%= f.label :password %>
+            <div class="field col-4 mx-auto py-2">
+                <%= f.label :Mot_de_passe %>
                         <% if @minimum_password_length %>
-                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <em>(<%= @minimum_password_length %> caractères minimum)</em>
                         <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password" %>
+                <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
             </div>
             </div>
               <div class="text-center">                 
-                <div class="field">
-                  <%= f.label :password_confirmation %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-                </div>
-              </div>
-              <div class="mb-4">
-                <label>Email Address</label>
-                <div class="input-group">
-                  <input type="email" class="form-control" placeholder="" >
+                <div class="field col-4 mx-auto py-2 ">
+                  <%= f.label :confirmation_du_mot_de_passe%><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
                 </div>
               </div>
         <div class="text-center">
-           <div class="actions">
+           <div class="actions col-4 mx-auto py-2">
                <%= f.submit "Inscription", class:"btn bg-gradient-primary w-100" %>
            </div>
               <% end %>

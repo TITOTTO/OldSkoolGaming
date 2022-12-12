@@ -21,6 +21,108 @@ a{
   text-decoration: none;
 }
 </style>
+<div class="container-fluid">
+<p class="text-uppercase font-weight-bold"></p>
+<div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
+
+<%# Hero page %>
+<!-- -------- START HEADER 1 w/ text and image on right ------- -->
+  <header>
+    <div class="page-header min-vh-100">
+      <div class="oblique position-absolute top-0 h-100 d-md-block d-none">
+        <div>
+        <%= image_tag("hero.jpg", height: 850) %>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-lg-10 col-md-7 d-flex justify-content-center flex-column">
+             <div class="text-center text-gradient text-primary">
+<h2>Connexion</h2>
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row">
+     
+        
+       
+
+            <div class="text-center">
+              <img src="https://i.pinimg.com/736x/0a/ef/40/0aef407e30d3c372ba775a325902ced5.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile">
+            </div>
+            <div class="text-center ">      
+              
+              <div class="field col-4 mx-auto py-2">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+              </div>
+                
+            </div>
+            <div class="text-center">
+              <div class="field col-4 mx-auto py-2">
+                <%= f.label :Mot_de_passe %><br />
+                <%= f.password_field :password, autocomplete: "current-password", class:"form-control"%>
+              </div>
+              <% if devise_mapping.rememberable? %>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :se_souvenir_de_moi%>
+                  </div>
+              <% end %>
+            </div>
+        <div class="text-center">
+           <div class="actions col-4 mx-auto py-2">
+               <%= f.submit "Connexion", class:"btn bg-gradient-primary w-100" %>
+           </div>
+              <% end %>
+        </div>  
+              
+      </div>
+          <form>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">
+              <%= render "devise/shared/links" %>
+              </div>
+          </form>          
+     </div>
+
+          </div>
+        </div>
+     
+
+  </header>
+<!-- -------- END HEADER 1 w/ text and image on right ------- -->
+<%# end container %>
+</div>
+</div>
+    
+
+
+
+
+<style>
+.btn-color{
+  background-color: #0e1c36;
+  color: #fff;
+  
+}
+
+.profile-image-pic{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+
+.cardbody-color{
+  background-color: #ebf2fa;
+}
+
+a{
+  text-decoration: none;
+}
+</style>
 <div class="text-center">
 <h2>Connect toi</h2>
 </div>
@@ -45,6 +147,8 @@ a{
                 <%= f.label :email %><br />
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
               </div>
+
+              
                 
             </div>
             <div class="text-center">
@@ -65,6 +169,9 @@ a{
             </div>
         </div>  
               <% end %>
+              
+
+              
       </div>
           <form>
               <div id="emailHelp" class="form-text text-center mb-5 text-dark">
