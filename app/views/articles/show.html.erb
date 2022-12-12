@@ -2,28 +2,65 @@
 
 <%= render "form/article/show" %>
 
-<div class="commentaire">
-  <%= render "form/article/newcom" %>
-</div>
-<%= link_to "Mettre un commentaire", nil , remote: true, class: "btn btn-danger", data: {controller: "comments", action: "comments#toggleForm"}%>
-<!-- <%= render "form/article/comments" %> -->
-<% @comments.each do |comment| %>
-<%= comment.title%>
-<%= comment.content%>
-<% end %>
-
-<div class="container bootdey">
-  <div class="col-md-12">
-    <section class="panel">
-      <div class="panel-body">
-        <div class="col-md-6">
-
+<!-- ici la section des boutons modifier article/revenir/supprimer -->
+<section>
+	  <div class="container py-0">
+	    <div class="row">
+	      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+          <div class="card card-custom bg-white border-white border-0" style="height: auto">
+            <div class="container py-0">	         
   <%= link_to "Modifier l'article", edit_article_path(@article) %> |
   <%= link_to "Revenir à l'article", articles_path %>
   <%= button_to "Supprimer l'article", @article, method: :delete %>
-
-    </section>
-       </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-</div>
+</section>
+
+<!-- ici la section écrire un commentaire -->
+<section>
+	  <div class="container py-5">
+	    <div class="row">
+	      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+          <div class="card card-custom bg-white border-white border-0" style="height: auto">
+            <div class="container py-3">
+                <%= render "form/article/newcom" %>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- ici la section bouton mettre un commentaire -->
+<section>
+	  <div class="container py-0">
+	    <div class="row">	      	  
+<%= link_to "Mettre un commentaire", nil , remote: true, class: "btn bg-gradient-primary w-auto me-10", data: {controller: "comments", action: "comments#toggleForm"}%>
+        </div>
+      </div>    
+</section>
+<!-- <%= render "form/article/comments" %> -->
+
+<!-- ici la section affichage des commentaires -->
+        
+           
+
+<% @comments.each do |comment| %>
+
+<section>
+	  <div class="container py-0">
+	    <div class="row">	      
+        <div class="card card-custom bg-white border-white border-0" style="height: auto">
+          <div class="card-body" style="overflow-y: auto">
+              <h5 class="text-center">Titre</h5>
+                <p class="card-text text-center"><%= comment.title%></p>
+              <h5 class="text-center">Commentaire</h5>
+                <p class="card-text text-center"><%= comment.content%></p>
+            </div>
+          </div>
+      </div>    
+    </div>      
+</section>
+
+<% end %>
