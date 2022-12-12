@@ -4,8 +4,9 @@
 <%= render "form/header/header" %>
 
       <!-- Partie filtre -->
-      <div class="col-md-6">
-        <div class="h-100 p-5 bg-light border rounded-3">
+      <section class="bg-white">
+      <div class="container">
+        <div class="h-100 p-5 ">
         <%= form_with url: "/articles", method: :get do |form| %>
             <%= form.label :console %> <br />
             <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}) %> <br />
@@ -17,21 +18,29 @@
         <% end %>
         </div>
       </div>
-
-<p class="text-uppercase font-weight-bold">Cards</p>
-<div class="row">
-  <% @articles.each do |article| %>
-    <% if article.buyer != nil %>
-    <% elsif params.include?(:console) == false && params.include?(:typeofgame) == false %> <!-- Si y'a aucun filtre -->
-      <%= render partial: "form/article/allarticle", locals: { article: article } %>
-    <% elsif article.console == params[:console] || article.typeofgame == params[:typeofgame] %> <!-- Si y'a un filtre -->
-      <%= render partial: "form/article/allarticle", locals: { article: article } %>
+      </section>
+      <%= render "form/user/avatar" %>
+<section class="bg-white">
+<div class="container">
+  <div class="row">
+    <% @articles.each do |article| %>
+    
+      <% if article.buyer != nil %>
+      <% elsif params.include?(:console) == false && params.include?(:typeofgame) == false %> <!-- Si y'a aucun filtre -->
+        <%= render partial: "form/article/allarticle", locals: { article: article } %>
+      <% elsif article.console == params[:console] || article.typeofgame == params[:typeofgame] %> <!-- Si y'a un filtre -->
+        <%= render partial: "form/article/allarticle", locals: { article: article } %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
+  </div>
+</section>
 
-<%= link_to "New article", new_article_path %>
+<div class="h-100 bg-white">
+<%= link_to "Retour à l'accueil", root_path %>
+</div>
 
 
 

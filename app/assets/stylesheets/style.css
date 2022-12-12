@@ -219,3 +219,21 @@ body {
 .rating:hover>input:checked~label:before {
     opacity: 0.4
 }
+
+.bg-video {
+    background-size: 100%; 
+    background-image: url("bg.jpg");    
+    background-attachment: fixed;
+    filter: blue
+
+}
+
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
