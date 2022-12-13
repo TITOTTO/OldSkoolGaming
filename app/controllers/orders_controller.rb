@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
     def new
     end
-  
+
+
 
     def create
         # Before the rescue, at the beginning of the method
@@ -32,4 +33,9 @@ class OrdersController < ApplicationController
       @user.cart.update(total: 0) # On pense bien à mettre le total du caddie à 0 !
       redirect_to new_order_path
     end
+    
+    def set_time
+      @time = Time.now
+    end
+  
 end
