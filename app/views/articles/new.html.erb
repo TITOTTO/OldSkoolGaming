@@ -1,19 +1,6 @@
-<h1 class="text-gradient text-primary mb-0 mt-2">Proposer un nouvel article</h1>
-<div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
-
-	<section>
-  
-	  <div class="container py-4">
-	    <div class="row">
-	      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
-	        <h3 class="text-center">Dis nous en plus sur ton article</h3>
+<h1 class="text-gradient text-primary mb-0 mt-2 text-center">Créer un nouvel article</h1><br>
+	     
           <%= render "form/article/new", article: @article %>
-	  </div>
-	</section>
 
-</div>
-
-
-<div>
-<h5 class="text-gradient text-primary mb-0 mt-2"> <%= link_to "Retour aux articles", articles_path %> </h5>
+<h5 class="text-gradient text-primary mb-0 text-center"> <%= link_to "Retour aux articles", articles_path %> </h5>
 </div>
