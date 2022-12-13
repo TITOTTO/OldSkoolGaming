@@ -21,7 +21,11 @@
 <% end %>
 
       <!-- Partie filtre -->
-      <section class="bg-mainos">
+      <% if current_user.nil? %>
+      <section class="bg-white border-bottom border-2 border-dark">
+        <% else %>
+        <section class="bg-mainos ">
+          <% end %>
       <div class="container d-flex justify-content-center align-items-end">
           <div class="card mb-5">
             <div class="card-body rounded-0 border border-2 border-dark">
@@ -37,7 +41,7 @@
         <% end %>
       </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 d-none d-lg-block">
             
               <%= image_tag "game.png", style:"height: 300px;" %>
       </div>
