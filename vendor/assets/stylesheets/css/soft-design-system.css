@@ -30,7 +30,7 @@
   --bs-primary: #cb0c9f;
   --bs-secondary: #8392AB;
   --bs-success: #82d616;
-  --bs-info: #17c1e8;
+  --bs-info: #7499AD;
   --bs-warning: #fbcf33;
   --bs-danger: #ea0606;
   --bs-light: #e9ecef;
@@ -3712,8 +3712,8 @@ fieldset:disabled .btn {
 
 .btn-info {
   --bs-btn-color: #000;
-  --bs-btn-bg: #17c1e8;
-  --bs-btn-border-color: #17c1e8;
+  --bs-btn-bg: #7499AD;
+  --bs-btn-border-color: #7499AD;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #3acaeb;
   --bs-btn-hover-border-color: #2ec7ea;
@@ -3723,8 +3723,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #2ec7ea;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #17c1e8;
-  --bs-btn-disabled-border-color: #17c1e8;
+  --bs-btn-disabled-bg: #7499AD;
+  --bs-btn-disabled-border-color: #7499AD;
 }
 
 .btn-warning {
@@ -3861,17 +3861,17 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-info {
-  --bs-btn-color: #17c1e8;
-  --bs-btn-border-color: #17c1e8;
+  --bs-btn-color: #7499AD;
+  --bs-btn-border-color: #7499AD;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #17c1e8;
-  --bs-btn-hover-border-color: #17c1e8;
+  --bs-btn-hover-bg: #7499AD;
+  --bs-btn-hover-border-color: #7499AD;
   --bs-btn-focus-shadow-rgb: 23, 193, 232;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #17c1e8;
-  --bs-btn-active-border-color: #17c1e8;
+  --bs-btn-active-bg: #7499AD;
+  --bs-btn-active-border-color: #7499AD;
   --bs-btn-active-shadow: none;
-  --bs-btn-disabled-color: #17c1e8;
+  --bs-btn-disabled-color: #7499AD;
   --bs-btn-disabled-bg: transparent;
   --bs-gradient: none;
 }
@@ -5135,9 +5135,6 @@ fieldset:disabled .btn {
   --bs-card-title-spacer-y: 0.5rem;
   --bs-card-border-width: 0;
   --bs-card-border-color: rgba(0, 0, 0, 0.125);
-  --bs-card-border-radius: 1rem;
-  --bs-card-box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
-  --bs-card-inner-border-radius: 1rem;
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: #fff;
@@ -8024,7 +8021,7 @@ fieldset:disabled .btn {
 }
 
 .link-info {
-  color: #17c1e8 !important;
+  color: #7499AD !important;
 }
 
 .link-info:hover,
@@ -8719,7 +8716,7 @@ fieldset:disabled .btn {
 }
 
 .border-info {
-  border-color: #17c1e8 !important;
+  border-color: #7499AD !important;
 }
 
 .border-warning {
@@ -10528,7 +10525,7 @@ fieldset:disabled .btn {
 }
 
 .text-info {
-  color: #17c1e8 !important;
+  color: #7499AD !important;
 }
 
 .text-warning {
@@ -10600,7 +10597,7 @@ fieldset:disabled .btn {
 }
 
 .bg-info {
-  background-color: #17c1e8 !important;
+  background-color: #7499AD !important;
 }
 
 .bg-warning {
@@ -20257,7 +20254,7 @@ fieldset:disabled .btn {
 }
 
 .badge.bg-info {
-  background: #17c1e8;
+  background: #7499AD;
 }
 
 .badge.bg-warning {
@@ -20515,13 +20512,13 @@ fieldset:disabled .btn {
 
 .btn-info:hover,
 .btn.bg-gradient-info:hover {
-  background-color: #17c1e8;
-  border-color: #17c1e8;
+  background-color: #7499AD;
+  border-color: #7499AD;
 }
 
 .btn-info .btn.bg-outline-info,
 .btn.bg-gradient-info .btn.bg-outline-info {
-  border: 1px solid #17c1e8;
+  border: 1px solid #7499AD;
 }
 
 .btn-info:not(:disabled):not(.disabled).active,
@@ -20530,8 +20527,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-info:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-info:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-info.dropdown-toggle {
-  color: color-yiq(#17c1e8);
-  background-color: #17c1e8;
+  color: color-yiq(#7499AD);
+  background-color: #7499AD;
 }
 
 .btn-info.focus,
@@ -20549,7 +20546,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   opacity: .75;
   box-shadow: none;
-  color: #17c1e8;
+  color: #7499AD;
 }
 
 .btn-warning:hover,
@@ -21751,7 +21748,7 @@ label,
 }
 
 .bg-gradient-faded-info-vertical {
-  background-image: radial-gradient(200px circle at 50% 70%, rgba(23, 193, 232, 0.3) 0, #17c1e8 100%);
+  background-image: radial-gradient(200px circle at 50% 70%, rgba(23, 193, 232, 0.3) 0, #7499AD 100%);
 }
 
 .bg-gradient-faded-warning-vertical {
@@ -23116,7 +23113,7 @@ html {
 }
 
 .sidenav[data-color="info"] .navbar-nav>.nav-item>.nav-link.active .icon {
-  background-image: linear-gradient(310deg, #17c1e8 0%, #17c1e8 100%);
+  background-image: linear-gradient(310deg, #7499AD 0%, #7499AD 100%);
 }
 
 .sidenav[data-color="warning"] .navbar-nav>.nav-item>.nav-link.active .icon {

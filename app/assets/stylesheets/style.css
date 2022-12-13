@@ -43,6 +43,10 @@ body {
     background-color: #FAECDA;
 }
 
+.bg-mainos2 {
+    background-color: #7499AD;
+}
+
 
 .emp-profile{
     padding: 3%;
@@ -234,7 +238,9 @@ body {
 
 }
 
-
+.card-box {
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 1);
+}
 
 .zoom {
   transition: transform .2s; /* Animation */
