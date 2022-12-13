@@ -11,33 +11,33 @@
     </div>
   <% end %>
 
-  
-  <div>
-    <%= form.label :"Quel est le titre de l'annonce?", style: "display: block" %>
-    <%= form.text_field :title %>
+
+  <div class="col-4 mx-auto py-3 px-5 mb-4 bg-white">
+    <%= form.label :"Titre de l'annonce", style: "display: block" %>
+    <%= form.text_field :title, class: "form-control"%>
   </div>
 
-  <div>
+  <div class="col-4 mx-auto py-3 px-5 mb-1 bg-white">
     <%= form.label :"Description de l'article", style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :prix, style: "display: block" %>
-    <%= form.number_field :price %>
+  <<div class="col-4 mx-auto py-3 px-5 mb-4 bg-white">
+    <%= form.label :Prix, style: "display: block" %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :"Choisissez une catégorie" %>
+  <div class="col-4 mx-auto py-3 px-5 mb-4 bg-white">
+    <%= form.label :"Choisissez une catégorie" %><br>
     <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}, article.typeofgame) %>
   </div>
 
-  <div>
-    <%= form.label :"Modèle de Console" %>
+ <div class="col-4 mx-auto py-3 px-5 mb-4 bg-white">
+    <%= form.label :"Modèle de Console" %><br>
     <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}, article.console) %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="col-4 mx-auto py-3 px-5 mb-4">
+    <%= form.submit "Création article", class:"btn bg-gradient-primary w-100" %>
   </div>
 <% end %>
