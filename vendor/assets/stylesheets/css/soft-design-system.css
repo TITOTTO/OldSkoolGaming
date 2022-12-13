@@ -21050,7 +21050,6 @@ fieldset:disabled .btn {
   .dropstart .dropdown-toggle:before,
   .dropend .dropdown-toggle:after,
   .dropend .dropdown-toggle:before {
-    font: normal normal normal 14px/1 FontAwesome;
     border: none;
     vertical-align: middle;
     font-weight: 600;
@@ -21085,15 +21084,15 @@ fieldset:disabled .btn {
 
   .dropdown .dropdown-toggle:after,
   .dropup .dropdown-toggle:after {
-    content: "\f107";
+    content: "♥"
   }
 
   .dropstart .dropdown-toggle:before {
-    content: "\f104";
+    content: "♥";
   }
 
   .dropend .dropdown-toggle:after {
-    content: "\f105";
+    content: "♥";
   }
 
   .dropdown.dropdown-hover .dropdown-menu,
@@ -21137,7 +21136,7 @@ fieldset:disabled .btn {
 
   .dropdown .dropdown-menu:before {
     font-family: 'Roboto', sans-serif;
-    content: "\f0d8";
+    content: "";
     position: absolute;
     top: 0;
     left: 28px;

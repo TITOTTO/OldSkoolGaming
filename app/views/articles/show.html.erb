@@ -64,3 +64,7 @@
 </section>
 
 <% end %>
+
+<% @article.seller.thecomments.each do |thecomment| %>
+<%= thecomment.text %>
+<% end %>
