@@ -36,7 +36,11 @@ body {
 }
 
 .bg-hugo {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-mainos {
+    background-color: #FAECDA;
 }
 
 
@@ -246,13 +250,19 @@ position: relative;
 }
 
 
+
 .zoom {
   transition: transform .2s; /* Animation */
   margin: 0 auto;
+  
+  
 }
 
 .zoom:hover {
-  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: translate(-12px, -12px);
+  transition: 0.1s ease-out;
+  box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 1);
+  
 }
 
 

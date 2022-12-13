@@ -1,7 +1,10 @@
 <% if flash[:error] %>
   <div class="notice", style="color: red"><%= flash[:error] %></div>
 <% end %>
+
+<% if current_user.nil? %>
 <%= render "form/header/header" %>
+<% end %>
 
       <!-- Partie filtre -->
       <section class="bg-white">
@@ -20,7 +23,7 @@
       </div>
       </section>
 
-<section class="bg-white">
+<section class="bg-mainos">
 <div class="container ">
   <div class="row ">
     <% @articles.each do |article| %>
