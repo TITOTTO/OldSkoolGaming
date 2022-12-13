@@ -1,18 +1,14 @@
-<header class="bg-gradient-primary">
+<header class="bg-gradient-dark">
     <div class="page-header min-vh-75">
-      <span class="mask opacity-2"><%= image_tag "mario.jpg", class:"img-fluid", style:"width:100%" %></span>
+      <span class="mask opacity-3"><%= image_tag "mario.jpg", class:"img-fluid", style:"width:100%" %></span>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-6 col-md-5 order-md-1 mama d-none d-xl-block" style="width: 30rem" ><%= image_tag "game.png", height: 200, class:"img-fluid zoom" %></div>
-          <div class="col-lg-6 text-center mx-auto my-auto">
-            <h1 class="text-white text-justify">On fait quoi chez Old Skool Gaming ?</h1>
-            <p class="lead mb-4 text-white opacity-8 text-justify">On vise la niche des passionnés qui dépensent sans compter. Ils viennent retrouver ce qui fait notre force : des produits rares et une communauté de connaisseurs qui ne laissent pas passer les arnaques.</p>
-              <% if current_user %>
-                <%= link_to "Mon compte", user_path(current_user), class:"btn btn-white order-0 fw-bold" %>
-              <% else %>
-                <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-white rounded-pill order-0 fw-bold" %>
-                <%= link_to "Sign up", new_user_registration_path, class:"btn btn-white rounded-pill order-0 fw-bold"  %>
-              <% end %>
+          <div class="col-lg-6 col-md-5 order-md-1 mama d-none d-xl-block" style="width: 30rem" ><%= image_tag "game.png", height: 200, class:"img-fluid" %></div>
+          <div class="col-lg-4 mx-auto my-auto  bg-white p-5 pb-0 border-0 border-dark">
+            <h3 class="text-dark pb-3">Prêt à faire du tri dans tes cartons ?</h3>
+                <%= link_to "Vends maintenant", new_user_registration_path, class:"btn btn-lg btn-primary rounded-0"  %>
+                <%= link_to "Découvrir comment ça marche", old_path, class:"text-decoration-underline"  %>
+           
             <div class="d-flex justify-content-center">
               <a href="javascript:;"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
               <a href="javascript:;"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
