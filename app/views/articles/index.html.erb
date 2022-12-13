@@ -20,6 +20,10 @@
 </section>
 <% end %>
 
+<% if current_user %>
+<%= render "form/article/example" %>
+<% end %>
+
       <!-- Partie filtre -->
       <% if current_user.nil? %>
       <section class="bg-white border-bottom border-2 border-dark">
@@ -28,7 +32,7 @@
           <% end %>
       <div class="container d-flex justify-content-center align-items-end">
           <div class="card mb-5">
-            <div class="card-body rounded-0 border border-2 border-dark">
+            <div class="card-body rounded-0 border border-2 border-dark card-box">
           <p class="lead text-dark"> Quel type de console recherchez-vous ?</p>
         <%= form_with url: "/articles", method: :get do |form| %>
             <%= form.label :console %> <br />
