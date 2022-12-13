@@ -139,7 +139,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
-.card {
+.cardos {
     position: relative;
     display: flex;
     flex-direction: column;
