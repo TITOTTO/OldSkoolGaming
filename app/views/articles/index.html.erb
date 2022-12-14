@@ -21,7 +21,7 @@
 <% end %>
 
 <% if current_user %>
-<%= render "form/article/example" %>
+<%= render partial: "form/article/example", locals: {articles: @articles} %>
 <% end %>
 
       <!-- Partie filtre -->

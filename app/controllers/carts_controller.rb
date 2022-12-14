@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :checklog
+  skip_before_action :verify_authenticity_token
 
   def index
     @user = current_user

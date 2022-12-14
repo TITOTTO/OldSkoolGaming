@@ -7,6 +7,7 @@ class UserController < ApplicationController
   def show
     @user = User.find(params[:id])
     @thecomment = @user.thecomments.build
+    @articles = @user.my_articles
 
   end
 
@@ -36,6 +37,9 @@ class UserController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @user.cart.destroy
+    @user.thecomments.destroy_all
+    @user.my_articles.destroy_all
+    @user.orders.destroy_all
     @user.destroy
     redirect_to user_index_path
   end
