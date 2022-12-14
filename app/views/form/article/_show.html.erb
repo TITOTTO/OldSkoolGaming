@@ -1,25 +1,38 @@
+<section class="bg-mainos">
+  <div class="container pt-5 pb-5">
+    <div class="card">
+      <div class="card-body rounded-0 border border-2 border-dark card-box">
+        <p class="lead text-dark">Ajoute des photos </P>
+          <div class="d-flex justify-content-around text-center align-items-center">
+        <%= link_to "+ Ajoute des photos ", user_path(current_user), class:"btn btn-lg btn-primary rounded-0" %>
+        <%= link_to "Valider la photo", user_path(current_user), class:"btn btn-lg btn-outline-primary rounded-0" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <div class="container px-4 py-5" id="featured-3">
-   
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-6 text-center">
+    <div class="row center">
     <%if @article.images.attached?%>
         <% i = 0 %> <!-- Ce sera l'ID de l'image dans le tableau d'image -->
         <% @article.images.each do |image|%>
-      <div class="feature col"> 
-      <div class="col">    
-        <%= image_tag image, alt: 'avatar', class: "img-fluid", style: 'height:10;width:12rem;' %> 
+        <div class="feature col-lg-4 col-md-6"> 
+            <div class="col">    
+                <%= image_tag image, alt: 'avatar', class: "img-fluid border border-2 border-dark zoom bg-white img", style: 'height:27rem width:100rem;' %> 
+            </div>
+        <div class="col">  
+            <%= link_to 'Remove', article_image_path(@article.id, image.id, task_id: i), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <% i = i + 1 %>
+        </div> 
       </div>
-      <div class="col">  
-        <%= link_to 'Remove', article_image_path(@article.id, image.id, task_id: i), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% i = i + 1 %>
-      </div> 
-      </div>
-      <% end %> 
+    <% end %> 
     </div>
-  </div>    
+</div>    
 
 
-
-  <div class="container px-4 py-5" id="featured-3">
+<div class="container px-4 py-5" id="featured-3">
    <%= form_with url: "/articles/#{params[:id]}/images", multipart: true do |form| %> 
               <%= form.file_field :image %> 
               <%= submit_tag "Valider la photo" %> 
