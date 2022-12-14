@@ -3,62 +3,24 @@
     <div class="row ">
     <p class="lead text-dark pt-5">Nouveaux articles</p>
 
-      <div class="d-flex">
-        <div class="cardos border border-2 border-dark zoom rounded-0" style="width: 15rem;">
-          <div class="fw-bold text-dark">
-            <p>Article en vogue</p>
-          </div>
-            <%= image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300")%>
-            <div class="card-body">
-            <h5 class="card-title"></h5>
-              <div class="clearfix mb-3">
-              <span class="float-start badge rounded-pill bg-gradient-info">SEGA</span>
-              <span class="float-end price-hp fw-bold text-dark ">20€</span>
+          <div class="d-flex">
+            <% articles.where(buyer: nil).last(4).each do |article| %>
+              <div class="cardos border border-2 border-dark zoom rounded-0" style="width: 15rem;">
+                <div class="fw-bold text-dark">
+                  <p><%= article.title %></p>
+                </div>
+                  <%= image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300")%>
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <div class="clearfix mb-3">
+                    <span class="float-start badge rounded-pill bg-gradient-info"><%= article.console %></span>
+                    <span class="float-end price-hp fw-bold text-dark "><%= article.price %></span>
+                  </div>
+                </div>
               </div>
-            </div>
+              
+            <% end %>
           </div>
-          <div class="cardos border border-2 border-dark zoom rounded-0" style="width: 15rem;">
-          <div class="fw-bold text-dark">
-            <p>Article en vogue</p>
-          </div>
-            <%= image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300")%>
-            <div class="card-body">
-            <h5 class="card-title"></h5>
-              <div class="clearfix mb-3">
-              <span class="float-start badge rounded-pill bg-gradient-info">SEGA</span>
-              <span class="float-end price-hp fw-bold text-dark ">20€</span>
-              </div>
-            </div>
-          </div>
-          <div class="cardos border border-2 border-dark zoom rounded-0" style="width: 15rem;">
-          <div class="fw-bold text-dark">
-            <p>Article en vogue</p>
-          </div>
-            <%= image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300")%>
-            <div class="card-body">
-            <h5 class="card-title"></h5>
-              <div class="clearfix mb-3">
-              <span class="float-start badge rounded-pill bg-gradient-info">SEGA</span>
-              <span class="float-end price-hp fw-bold text-dark ">20€</span>
-              </div>
-            </div>
-          </div>
-          <div class="cardos border border-2 border-dark zoom rounded-0" style="width: 15rem;">
-          <div class="fw-bold text-dark">
-            <p>Article en vogue</p>
-          </div>
-            <%= image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300")%>
-            <div class="card-body">
-            <h5 class="card-title"></h5>
-              <div class="clearfix mb-3">
-              <span class="float-start badge rounded-pill bg-gradient-info">SEGA</span>
-              <span class="float-end price-hp fw-bold text-dark ">20€</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
-

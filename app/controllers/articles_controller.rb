@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comments = @article.comments
+    @articles = @article.seller.my_articles
   end
 
   # GET /articles/new

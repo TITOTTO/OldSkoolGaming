@@ -21,7 +21,11 @@ class ThecommentsController < ApplicationController
 
   # POST /thecomments or /thecomments.json
   def create
-    @thecomment = Thecomment.new(thecomment_params)
+    @thecomment = Thecomment.new
+    @thecomment.title = params[:title]
+    @thecomment.text = params[:text]
+    @thecomment.user = current_user
+    @thecomment.article_id = params[:article_id]
 
     respond_to do |format|
       if @thecomment.save

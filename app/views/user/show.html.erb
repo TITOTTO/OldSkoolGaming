@@ -1,56 +1,29 @@
 <%= render "form/user/show" %> <!-- A modifier -->
 
  <b>Comments</b>
- <br>
-
-   
+ <br> 
    <br>
+<% @user.thecomments.each do |thecomment|%>
+    <% if thecomment.title.class == NilClass %>
+    <% else %>
+        <div class="container px-4 py-5 card">
+            <div class="row">
+                <div class="col-2">               
+                    <img src="https://cdn-icons-png.flaticon.com/128/1747/1747273.png" width="70" class="rounded-circle mt-2">           
+                </div>           
+                <div class="col-10">              
+                    <div class="comment-box ml-2">                  
+                        <h4><%= thecomment.title%></h4>
+                        <div class="comment-area">
+                            <%= thecomment.text%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% end %>
 
 
 
-
- <%- @user.thecomments.each do |thecomment|%>
-<div class="container px-4 py-5 card">
-
-               
-              <div class="row">
-                  
-                  <div class="col-2">
-                      
-                      <img src="https://cdn-icons-png.flaticon.com/128/1747/1747273.png" width="70" class="rounded-circle mt-2">
-                  
-                  </div>
-                  
-                  <div class="col-10">
-                      
-                      <div class="comment-box ml-2">
-                          
-                          <h4><%= thecomment.title%></h4>
-                          
-              
-                         
-                          <div class="comment-area">
-                              
-                              <%= thecomment.text%>
-                          
-                          </div>
-                          
-                          
-                                  
-                                  </div>
-                                  
-                                 
-                               
-                      
-                       
-                      </div>
-                  
-                  </div>
-              
-              
-              </div>
-    
-          </div>
-
-           <% end %>
 

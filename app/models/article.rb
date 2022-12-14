@@ -13,4 +13,5 @@ class Article < ApplicationRecord
     has_many :article_orders
     has_many :orders, through: :article_orders
     has_many :comments, as: :commentable
+    has_many :thecomments
 end

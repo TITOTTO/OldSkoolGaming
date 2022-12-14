@@ -1,9 +1,9 @@
-  <%= form_with(model: thecomment) do |form| %>
+  <%= form_with url: thecomments_path do |form| %>
 
    
       
-
-   <%= form.hidden_field :user_id %>
+   <%= form.hidden_field :article_id, :value => article.id %>
+   <%= form.hidden_field :user_id, :value => current_user.id %>
 
    <%= form.label :title, "Title:" %>
    <%= form.text_area :title %>

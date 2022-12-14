@@ -34,17 +34,22 @@
 
       <div class="col-md-6">
         <div class="h-100 p-5 bg-white border rounded-0 border border-2 border-dark">
-          
+            <%= button_to "Mettre dans le caddie", user_carts_path(current_user, article: @article.id), method: :create, class:"btn btn-warning rounded-0" %>
         </div>
       </div>
     </div>
   </div>
 </section>
   
+<%= render partial: "thecomments/form",  locals: {article: @article}%>
 
-<div class="container pt-5">Ci-dessous afficher tous les articles vendus par cet utilisateur
-</div>
-<%= render "form/article/example" %>
+<div>ICI TU DOIS VOIR TES ARTICLES VENDU </div>
+<% @articles.each do |article| %>  <!-- Seul les articles vendu et dont le proprio est l'utilisateur de la page seront visibles-->
+    <% if article.seller = @user && article.buyer != nil %>
+        <%= article.title%>
+        <%= article.content%>
+    <% end %>
+<% end %>
 
 
 

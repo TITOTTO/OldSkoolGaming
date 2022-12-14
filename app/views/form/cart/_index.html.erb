@@ -42,7 +42,7 @@
                   </th>
                   <td class="border-0 align-middle"><strong><%= article.price %> €</strong></td>
                   <td class="border-0 align-middle"><strong>1</strong></td>
-                  <td class="border-0 align-middle"><%= link_to "X", user_cart_path(current_user, current_user.cart, article_id: article.id), method: :delete, class: "btn bg-gradient-warning w-auto me-1 mb-0", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+                  <td class="border-0 align-middle"><%= button_to "X", user_cart_path(current_user, current_user.cart, article_id: article.id), method: :delete, class: "btn bg-gradient-warning w-auto me-1 mb-0" %></td>
                 </tr> 
 				<%end%>               
               </tbody>
