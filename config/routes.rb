@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root to: "articles#index"
   get '/old', to: 'static_pages#old_skool_gaming'
   get '/kit', to: 'static_pages#kit_ui'
+  get '/cgv', to: 'static_pages#cgv'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
