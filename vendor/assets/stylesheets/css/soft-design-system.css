@@ -2731,10 +2731,7 @@ progress {
   line-height: 1.4rem;
   color: #495057;
   background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #d2d6da;
   appearance: none;
-  border-radius: 0.5rem;
   transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
@@ -21509,12 +21506,7 @@ fieldset:disabled .btn {
   padding-right: 10px;
 }
 
-.form-control {
-  border-radius: 0.5rem;
-  border-top-right-radius: 0.5rem !important;
-  border-bottom-right-radius: 0.5rem !important;
-  border-left-width: 1px;
-}
+
 
 .focused {
   box-shadow: 0 0 0 2px #e9aede;
