@@ -31,6 +31,5 @@ Oldskoolgaming est en production et accessible en ligne.
 Le buzz à été lancé par un de nos fans et influenceur gaming : les fans de gaming sont déjà nombreux à se connecter et Leboncoin et autre Ebay sont déjà à l'affut pour nous racheter.
 
 Évidemment, le principe du MVP est l'itération : ainsi, nous avons prévu des fonctionnalités en plus:
-- Ajout d'un dashboard Admin, qui fait un état des lieux des commandes effectuées
 - Ajout d'un type de user "admin", qui peut créer et modifier, supprimer des produits et des utilisateurs.
 - Ajout d'un système participatif avec des notation avec des étoiles et des commentaires des produits
