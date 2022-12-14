@@ -3,21 +3,48 @@
 <%= render "form/article/show" %>
 
 <!-- ici la section des boutons modifier article/revenir/supprimer -->
+
+
 <section>
-	  <div class="container py-0">
-	    <div class="row">
-	      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
-          <div class="card card-custom bg-white border-white border-0" style="height: auto">
-            <div class="container py-0">	         
-  <%= link_to "Modifier l'article", edit_article_path(@article) %> |
-  <%= link_to "Revenir à l'article", articles_path %>
-  <%= button_to "Supprimer l'article", @article, method: :delete %>
-            </div>
-          </div>
+    <div class="container py-0">
+    <div class="p-5 mb-4 bg-white rounded-0 border border-2 border-dark">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold "><%= @article.title %></h1>
+        <p class="col-md-12"><%= @article.content %></p>
+        <%= @article.console %>
+        
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <% if current_user == @article.seller %>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-0 border border-2 border-dark">
+           <%= link_to "Modifier l'article", edit_article_path(@article), class:"btn btn-warning rounded-0" %>
+           <%= button_to "Supprimer l'article", @article, method: :delete, class:"btn btn-danger rounded-0" %>
+        </div>
+      </div>
+      <% else %>
+      <div class="col-md-6">
+        <div>
+           <%= image_tag "game.png", style:"height: 300px;" %>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-white border rounded-0 border border-2 border-dark">
+          
         </div>
       </div>
     </div>
+  </div>
 </section>
+  
+
+<div class="container pt-5">Ci-dessous afficher tous les articles vendus par cet utilisateur
+</div>
+<%= render "form/article/example" %>
 
 
 
