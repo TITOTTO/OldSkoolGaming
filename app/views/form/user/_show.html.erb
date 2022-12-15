@@ -1,9 +1,15 @@
-<div class="container emp-profile">
+<div class="container emp-profile border border-2 border-dark rounded-0">
                 <div class="row">
                     <div class="col-md-4">
+<<<<<<< HEAD
+                        <div class="profile-img pb-5">
+                            <%if @user.avatar.attached?%> 
+                                <%= image_tag @user.avatar, alt: 'avatar' %>
+=======
                         <div class="profile-img">
                             <% if @user.avatar.attached? %> 
                                 <%= image_tag @user.avatar, alt: "avatar" %>
+>>>>>>> 6a02a26d0046cdaa13a6f16d78d989624341e66b
                             <% else %>
                             <img src="https://media.istockphoto.com/id/1307387607/vector/anonymous-vector-icon-incognito-sign-privacy-concept-human-head-with-glitch-face-personal.jpg?s=612x612&w=0&k=20&c=gABTCg7-xeCyeWDF-JnNzPbpnCeTX8wH-TxIYdkC0yQ=" alt=""/>
                             <% end %>
@@ -37,7 +43,7 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>ID User</label>
+                                                <p>ID User</p>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%= @user.id %></p>
@@ -45,7 +51,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Prénom</label>
+                                                <p>Prénom</p>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%= @user.first_name %></p>
@@ -53,7 +59,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Nom</label>
+                                                <p>Nom</p>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%= @user.last_name %></p>
@@ -61,7 +67,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <p>Email</p>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%= @user.email %></p>
@@ -69,7 +75,7 @@
                                         </div>                                        
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Description</label>
+                                                <p>Description</p>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%= @user.description %></p>
