@@ -79,7 +79,7 @@
 <% @articles.each do |article| %>
   <!-- Seul les articles vendu et dont le proprio est l'utilisateur de la page
   seront visibles-->
-  <% if article.seller = @user && article.buyer == nil %>
+  <% if article.buyer == nil %>
     <%= article.title %>
     <%= article.content %>
   <% end %>
