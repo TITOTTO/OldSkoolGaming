@@ -37,11 +37,7 @@
         <%= form_with url: "/articles", method: :get do |form| %>
             <%= form.label :console %> <br />
             <%= form.select :console, options_for_select(Article.consoles.map { |key, value| [key.titleize, Article.consoles.key(value)] }) %> <br />
-
-	          <%= form.label :typeofgame %>
-            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map { |key, value| [key.titleize, Article.typeofgames.key(value)] }) %>
-            
-	    <%= form.submit %>
+	          <%= form.submit %>
         <% end %>
       </div>
         </div>
