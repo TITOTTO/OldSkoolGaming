@@ -2,10 +2,17 @@ body {
     background-color: #FFF0E5;
 }
 
+
 .img:active {
     transform: scale(1.2);
     transition: 1s;
 }
+
+.zoomed:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 
 .card-text {
     font-family: "Roboto", sans-serif;
