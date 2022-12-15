@@ -30,6 +30,7 @@
             <%= button_to "Supprimer l'article", @article, method: :delete, class:"btn btn-secondary text-dark rounded-0" %>
           </div>
           </div>
+
         </div>
       <% else %>
         <div class="col-md-4">
@@ -39,12 +40,14 @@
               <%= image_tag "game.png", style:"height: 300px;" %>
           </div>
           </div>
+
         </div>
       <% end %>
       
 
       <div class="col-md-4">
         <div class="h-100 p-5 bg-white border rounded-0 border border-2 border-dark">
+
           <p class="lead fw-bold border-bottom border-2"><%= @article.price %> €</p>
           <p class="border-bottom border-2">
           Pour tout achat effectué par le biais du bouton "Payer", nous appliquons des frais couvrant notre protection acheteurs. Cette protection acheteurs comprend notre <%= link_to "Politique de remboursement", cgv_path %>.
@@ -60,11 +63,13 @@
           </p>
           
           <%= button_to "Mettre dans le caddie", user_carts_path(current_user, article: @article.id), method: :create, class:"btn btn-primary rounded-0" %>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <%= render partial: "thecomments/form",  locals: {article: @article} %>
 
@@ -77,4 +82,5 @@
     <%= article.title %>
     <%= article.content %>
   <% end %>
+
 <% end %>
