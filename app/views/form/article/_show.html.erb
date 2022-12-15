@@ -29,8 +29,9 @@
                 <%= image_tag image, alt: 'avatar', class: "img-fluid border border-2 border-dark bg-white img" %> 
             </div>
         <div class="col">  
+        <% if @article.seller == current_user %>
           <%= button_to "Supprimer la photo", article_image_path(@article.id, image.id, task_id: i), method: :delete, class:"btn btn-outline-dark border-2 rounded-0" %>
-
+        <% end %>
             <% i = i + 1 %>
         </div> 
       </div>
