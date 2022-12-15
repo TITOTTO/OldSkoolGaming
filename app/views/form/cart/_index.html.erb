@@ -34,9 +34,9 @@
                 <tr>
                   <th scope="row" class="border-0">
                     <div class="p-2">
-                      <%= image_tag article.images[0], class:"img-fluid rounded shadow-sm", width: "70rem" if article.images.attached? %> 
+                      <%= image_tag article.images[0], class: "img-fluid rounded shadow-sm", width: "70rem" if article.images.attached? %> 
                       <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <%= link_to article.title, article_path(article) %></h5><span class="text-muted font-weight-normal font-italic d-block">Description: <%= article.content%></span>
+                        <h5 class="mb-0"> <%= link_to article.title, article_path(article) %></h5><span class="text-muted font-weight-normal font-italic d-block">Description: <%= article.content %></span>
                       </div>
                     </div>
                   </th>
@@ -44,7 +44,7 @@
                   <td class="border-0 align-middle"><strong>1</strong></td>
                   <td class="border-0 align-middle"><%= button_to "X", user_cart_path(current_user, current_user.cart, article_id: article.id), method: :delete, class: "btn bg-gradient-warning w-auto me-1 mb-0" %></td>
                 </tr> 
-				<%end%>               
+				<% end %>               
               </tbody>
             </table>
           </div>

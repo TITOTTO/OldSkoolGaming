@@ -98,6 +98,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    erb-formatter (0.3.0)
     erubi (1.11.0)
     faker (3.0.0)
       i18n (>= 1.8.11, < 2)
@@ -236,6 +237,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  erb-formatter
   faker
   importmap-rails
   jbuilder
