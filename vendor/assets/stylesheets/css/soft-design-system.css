@@ -390,6 +390,11 @@ textarea {
   font-family: 'Roboto', sans-serif;
   font-size: inherit;
   line-height: inherit;
+  border-color: #343a40;
+  background: none;
+  padding: 1.2rem;
+  
+
 }
 
 button,
