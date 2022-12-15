@@ -38,12 +38,14 @@
             <p>Type de console</p>
             <%= form.select :console, options_for_select(Article.consoles.map { |key, value| [key.titleize, Article.consoles.key(value)] }) %> <br />
 
+
 	          <p>Etat de la console</p>
             <div class="d-flex justify-content-between">
             <%= form.select :typeofgame, options_for_select(Article.typeofgames.map { |key, value| [key.titleize, Article.typeofgames.key(value)] }) %>
             
 	    <%= form.submit "Rechercher", class:"btn btn-primary rounded-0" %>
     </div>
+
         <% end %>
       </div>
         </div>
