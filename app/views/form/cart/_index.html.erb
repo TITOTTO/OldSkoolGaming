@@ -1,15 +1,13 @@
 <div class="px-4 px-lg-0">
-  <!-- For demo purpose -->
+
   <div class="container text-white py-5 text-center">
-    <h1 class="display-4">Ton panier</h1>    
+    <h1 class="display-4">Ton panier</h1>
   </div>
-  <!-- End -->
 
   <div class="pb-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-
           <!-- Shopping cart table -->
           <div class="table-responsive">
             <table class="table">
@@ -28,23 +26,27 @@
                     <div class="py-2 text-uppercase">Effacer</div>
                   </th>
                 </tr>
-              </thead>			  
+              </thead>
               <tbody>
-			  <% @cart.articles.each do |article| %>
-                <tr>
-                  <th scope="row" class="border-0">
-                    <div class="p-2">
-                      <%= image_tag article.images[0], class: "img-fluid rounded shadow-sm", width: "70rem" if article.images.attached? %> 
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <%= link_to article.title, article_path(article) %></h5><span class="text-muted font-weight-normal font-italic d-block">Description: <%= article.content %></span>
+                <% @cart.articles.each do |article| %>
+                  <tr>
+                    <th scope="row" class="border-0">
+                      <div class="p-2">
+                        <%= image_tag article.images[0], class:"img-fluid rounded shadow-sm", width: "70rem" if article.images.attached? %>
+                        <div class="ml-3 d-inline-block align-middle">
+                          <h5 class="mb-0">
+                            <%= link_to article.title, article_path(article) %></h5><span class="text-muted font-weight-normal font-italic d-block">Description:
+                            <%= article.content %></span>
+                        </div>
                       </div>
-                    </div>
-                  </th>
-                  <td class="border-0 align-middle"><strong><%= article.price %> €</strong></td>
-                  <td class="border-0 align-middle"><strong>1</strong></td>
-                  <td class="border-0 align-middle"><%= button_to "X", user_cart_path(current_user, current_user.cart, article_id: article.id), method: :delete, class: "btn bg-gradient-warning w-auto me-1 mb-0" %></td>
-                </tr> 
-				<% end %>               
+                    </th>
+                    <td class="border-0 align-middle"><strong><%= article.price %>
+                        €</strong></td>
+                    <td class="border-0 align-middle"><strong>1</strong></td>
+                    <td class="border-0 align-middle"><%= button_to "X", user_cart_path(current_user, current_user.cart, article_id: article.id), method: :delete, class: "btn bg-gradient-warning w-auto me-1 mb-0" %></td>
+                  </tr>
+                <% end %>
+
               </tbody>
             </table>
           </div>
@@ -53,31 +55,36 @@
       </div>
 
       <div class="row py-5 p-4 bg-white rounded shadow-sm">
-        <div class="col-lg-6">      
-                  
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Règlement du panier </div>
+        <div class="col-lg-6">
+
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Règlement du panier
+          </div>
           <div class="p-4">
             <p class="font-italic mb-4">Récapitulatif du panier prêt à payé.</p>
-            <ul class="list-unstyled mb-4">              
+            <ul class="list-unstyled mb-4">
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                <h5 class="font-weight-bold"><%= @cart.total %> €</h5>
+                <h5 class="font-weight-bold"><%= @cart.total %>
+                  €</h5>
               </li>
             </ul><%= form_tag orders_path do %>
-				<article>
-				<% if flash[:error].present? %>
-					<div id="error_explanation">
-					<p><%= flash[:error] %></p>
-					</div>
-				<% end %>				
-				</article>
-				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-					data-description="Achat d'un produit"
-					data-amount="<%= @cart.total * 100 %>"
-					data-label="Payer"
-					data-locale="auto">
-				</script>
-			<% end %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+              <script
+                src="https://checkout.stripe.com/checkout.js"
+                class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Achat d'un produit"
+                data-amount="<%= @cart.total * 100 %>"
+                data-label="Payer"
+                data-locale="auto"
+              >
+              </script>
+            <% end %>
           </div>
         </div>
       </div>

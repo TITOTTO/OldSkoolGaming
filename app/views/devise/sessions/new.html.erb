@@ -25,7 +25,7 @@ a{
 <p class="text-uppercase font-weight-bold"></p>
 <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
 
-<%# Hero page %>
+<% # Hero page %>
 <!-- -------- START HEADER 1 w/ text and image on right ------- -->
   <header>
     <div class="page-header min-vh-100">
@@ -55,25 +55,25 @@ a{
               
               <div class="field col-4 mx-auto py-2 border-primary">
                 <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control rounded-0 border border-2 border-dark" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded-0 border border-2 border-dark" %>
               </div>
                 
             </div>
             <div class="text-center">
               <div class="field col-4 mx-auto py-2">
                 <%= f.label :Mot_de_passe %><br />
-                <%= f.password_field :password, autocomplete: "current-password", class:"form-control"%>
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
               </div>
               <% if devise_mapping.rememberable? %>
                   <div class="field">
                     <%= f.check_box :remember_me %>
-                    <%= f.label :se_souvenir_de_moi%>
+                    <%= f.label :se_souvenir_de_moi %>
                   </div>
               <% end %>
             </div>
         <div class="text-center">
            <div class="actions col-4 mx-auto py-2">
-               <%= f.submit "Connexion", class:"btn bg-gradient-primary w-100" %>
+               <%= f.submit "Connexion", class: "btn bg-gradient-primary w-100" %>
            </div>
               <% end %>
         </div>  
@@ -92,7 +92,7 @@ a{
 
   </header>
 <!-- -------- END HEADER 1 w/ text and image on right ------- -->
-<%# end container %>
+<% # end container %>
 </div>
 </div>
     
