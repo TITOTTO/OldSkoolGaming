@@ -1,5 +1,8 @@
 class Article < ApplicationRecord
-  validates :title, :content, :price, :console, :typeofgame, presence: true
+  validates :title, length: {maximum: 30, too_long: "%{count} caractère autorisés pour le titre" }, presence: true
+  validates :content, length: { maximum: 250,
+    too_long: "%{count} caractère autorisés pour la description" }, presence: true
+  validates :price, :console, :typeofgame, presence: true
   validates :price, numericality: { message: "%{value} semble incorrect" }
 
     
