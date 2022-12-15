@@ -12,7 +12,7 @@
         <p class="lead text-dark">Besoin d'astuces ?</P>
           <div class="d-flex justify-content-between text-center align-items-center">
         <p>Pensez à ajouter un avatar sur votre profil pour gagner en visibilité.</p>
-        <%= link_to "Personnaliser", user_path(current_user), class:"btn btn-lg btn-primary rounded-0" %>
+        <%= link_to "Personnaliser", user_path(current_user), class: "btn btn-lg btn-primary rounded-0" %>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
 <% end %>
 
 <% if current_user %>
-<%= render partial: "form/article/example", locals: {articles: @articles} %>
+<%= render partial: "form/article/example", locals: { articles: @articles } %>
 <% end %>
 
       <!-- Partie filtre -->
@@ -36,10 +36,10 @@
           <p class="lead text-dark"> Quel type de console recherchez-vous ?</p>
         <%= form_with url: "/articles", method: :get do |form| %>
             <%= form.label :console %> <br />
-            <%= form.select :console, options_for_select(Article.consoles.map {|key, value| [key.titleize, Article.consoles.key(value)]}) %> <br />
+            <%= form.select :console, options_for_select(Article.consoles.map { |key, value| [key.titleize, Article.consoles.key(value)] }) %> <br />
 
 	          <%= form.label :typeofgame %>
-            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map {|key, value| [key.titleize, Article.typeofgames.key(value)]}) %>
+            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map { |key, value| [key.titleize, Article.typeofgames.key(value)] }) %>
             
 	    <%= form.submit %>
         <% end %>
@@ -47,7 +47,7 @@
         </div>
         <div class="mb-3 d-none d-lg-block">
             
-              <%= image_tag "game.png", style:"height: 300px;" %>
+              <%= image_tag "game.png", style: "height: 300px;" %>
       </div>
       
       </section>

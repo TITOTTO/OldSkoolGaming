@@ -17,7 +17,7 @@ gem 'sendgrid-ruby'
 
 gem 'stripe'
 
-gem 'erb-formatter' #pour l'indentation fichier.erb
+gem 'erb-formatter'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"

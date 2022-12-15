@@ -25,7 +25,7 @@ a{
 <p class="text-uppercase font-weight-bold"></p>
 <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
 
-<%# Hero page %>
+<% # Hero page %>
 <!-- -------- START HEADER 1 w/ text and image on right ------- -->
   <header>
     <div class="page-header min-vh-100">
@@ -56,7 +56,7 @@ a{
               
               <div class="field col-4 mx-auto py-2">
                 <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
               </div>
                 
             </div>
@@ -66,18 +66,18 @@ a{
                         <% if @minimum_password_length %>
                         <em>(<%= @minimum_password_length %> caractères minimum)</em>
                         <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
             </div>
             </div>
               <div class="text-center">                 
                 <div class="field col-4 mx-auto py-2 ">
-                  <%= f.label :confirmation_du_mot_de_passe%><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+                  <%= f.label :confirmation_du_mot_de_passe %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
                 </div>
               </div>
         <div class="text-center">
            <div class="actions col-4 mx-auto py-2">
-               <%= f.submit "Inscription", class:"btn bg-gradient-primary w-100" %>
+               <%= f.submit "Inscription", class: "btn bg-gradient-primary w-100" %>
            </div>
               <% end %>
         </div>  
@@ -96,7 +96,7 @@ a{
 
   </header>
 <!-- -------- END HEADER 1 w/ text and image on right ------- -->
-<%# end container %>
+<% # end container %>
 </div>
 </div>
     
