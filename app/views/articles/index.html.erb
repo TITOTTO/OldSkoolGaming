@@ -37,6 +37,7 @@
         <%= form_with url: "/articles", method: :get do |form| %>
             <p>Type de console</p>
             <%= form.select :console, options_for_select(Article.consoles.map { |key, value| [key.titleize, Article.consoles.key(value)] }) %> <br />
+	          <%= form.submit 'Confirmer' %>
 
 
 	          <p>Etat de la console</p>
@@ -76,8 +77,8 @@
   </div>
 </section>
 
-<div class="h-100 bg-white">
-<%= link_to "Retour à l'accueil", root_path %>
+<div class="h-100 bg-white text-center">
+<a class="text-center" href="#">Début de page</a>
 </div>
 
 
