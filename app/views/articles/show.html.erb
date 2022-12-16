@@ -61,22 +61,22 @@
           <p class="border-bottom border-2">
             Paiement: VISA
           </p>
-          
+          <% if current_user %>
           <%= button_to "Mettre dans le caddie", user_carts_path(current_user, article: @article.id), method: :create, class:"btn btn-primary rounded-0" %>
-
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </section>
-
+<% if current_user %>
 <div class="commentaire d-none" >
 <%= render partial: "thecomments/form",  locals: {article: @article} %>
 </div>
 <%= link_to "Repondre", nil , remote: true, class: "btn btn-danger", data: { controller: "comments", action: "comments#toggleForm"} %> 
 <div>Voici les articles que ce vendeur proposent
 </div>
-
+<% end %>
 <section class="bg-mainos">
   <div class="container ">
     <div class="row ">
