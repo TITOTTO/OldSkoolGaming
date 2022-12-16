@@ -1,7 +1,7 @@
   <nav class="navbar navbar-light navbar-expand-lg sticky-top bg-hugo border-bottom border-dark border-2 shadow-0">
     <div class="container">
       <% #= image_tag "https://i.gifer.com/4dg6.gif", class:"img-fluid", style:"height: 4rem" %>
-      <a class="navbar-brand text-dark font-weight-bolder ms-sm-3" href="/"><%= image_tag "https://trello.com/1/cards/6399fa95aec8c101108d9153/attachments/6399fabfb0018a0319c71b26/previews/6399fac4b0018a0319c71d5a/download/Blanc_avec_Triangles_Color%C3%A9s_Internet_Logo.gif", class:"img-fluid", style:"height: 4rem" %></a>
+      <a class="navbar-brand text-dark font-weight-bolder ms-sm-3" href="/"><%= image_tag "https://trello.com/1/cards/6399fa95aec8c101108d9153/attachments/6399fabfb0018a0319c71b26/previews/6399fac4b0018a0319c71d5a/download/Blanc_avec_Triangles_Color%C3%A9s_Internet_Logo.gif", class:"img-fluid", style:"height: 4rem" %><%= link_to " OLD SKOOL GAMING ", root_path, class: "nav-link active fw-bold" %></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,11 +9,8 @@
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav me-auto mb-lg-0">          
           <li class="nav-item">
-            <%= link_to " Old Skool Gaming ", old_path, class: "nav-link active" %>
+            <%= link_to "À PROPOS ", old_path, class: "nav-link active" %>
           </li>                 
-          <li class="nav-item">
-            <%= link_to "CGV", cgv_path, class: "nav-link active" %>
-          </li>
         </ul>
   <% if current_user %>
     <div class="d-flex">
