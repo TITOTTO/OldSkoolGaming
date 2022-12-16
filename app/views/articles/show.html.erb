@@ -74,14 +74,22 @@
 <%= render partial: "thecomments/form",  locals: {article: @article} %>
 </div>
 <%= link_to "Repondre", nil , remote: true, class: "btn btn-danger", data: { controller: "comments", action: "comments#toggleForm"} %> 
-<div>ICI TU DOIS VOIR TES ARTICLES VENDU
+<div>Voici les articles que ce vendeur proposent
 </div>
-<% @articles.each do |article| %>
-  <!-- Seul les articles vendu et dont le proprio est l'utilisateur de la page
-  seront visibles-->
-  <% if article.buyer == nil %>
-    <%= article.title %>
-    <%= article.content %>
-  <% end %>
-<% end %>
 
+<section class="bg-mainos">
+  <div class="container ">
+    <div class="row ">
+      <p class="lead text-dark pt-5">Nouveaux articles</p>
+      <div class="d-flex">
+        <% @articles.each do |article| %>
+          <!-- Seul les articles vendu et dont le proprio est l'utilisateur de la page
+          seront visibles-->
+          <% if article.buyer == nil %>
+                    <%= render partial: "form/article/exampleform", locals: { article: article } %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
