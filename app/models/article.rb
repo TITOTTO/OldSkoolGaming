@@ -7,7 +7,7 @@ class Article < ApplicationRecord
 
     
     enum :typeofgame, [:Non_fonctionnel, :Mauvais_état, :Bon_état, :Neuf]
-    enum :console, [:ATARI_2600, :ATARI_5200, :ATARI_7800, :COLECO_VISION, :LYNX, :JAGUAR, :NES, :SNES, :N64, :GAMEBOY, :GAMEBOY_COLOR, :GAMEBOY_ADVANCE, :GAMECUBE, :MASTER_SYSTEME, :MEGADRIVE, :GAMEGEAR, :SEGA_SATURN, :DREAMCAST, :NEOGEO_CD, :NEGEO_POCKET, :PS1, :PS2 ]
+    enum :console, [:SNES, :PS1, :SEGA]
     belongs_to :seller, class_name: "User"
     belongs_to :buyer, class_name: "User", optional: true
     has_many_attached :images
