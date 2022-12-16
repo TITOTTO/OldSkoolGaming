@@ -19,7 +19,7 @@ class ArticlesTest < ApplicationSystemTestCase
     fill_in "Title", with: @article.title
     click_on "Create Article"
 
-    assert_text "Article was successfully created"
+    assert_text "Article créé avec succés"
     click_on "Back"
   end
 
@@ -32,7 +32,7 @@ class ArticlesTest < ApplicationSystemTestCase
     fill_in "Title", with: @article.title
     click_on "Update Article"
 
-    assert_text "Article was successfully updated"
+    assert_text "Article modifié avec succés"
     click_on "Back"
   end
 
@@ -40,6 +40,6 @@ class ArticlesTest < ApplicationSystemTestCase
     visit article_url(@article)
     click_on "Destroy this article", match: :first
 
-    assert_text "Article was successfully destroyed"
+    assert_text "Article supprimé avec succès"
   end
 end
