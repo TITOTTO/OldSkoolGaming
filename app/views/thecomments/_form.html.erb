@@ -1,19 +1,22 @@
+  <div class="container d-flex flex-row bg-white pt-3 pb-3 border border-2 border-dark card-box">
   <%= form_with url: thecomments_path do |form| %>
-
-   
-      
+    
    <%= form.hidden_field :article_id, :value => article.id %>
    <%= form.hidden_field :user_id, :value => current_user.id %>
-
-   <%= form.label :title, "Title:" %>
+<div>
+   <p>Titre</p>
    <%= form.text_area :title %>
-
-   <%= form.label :text, "Text:" %>
+</div>
+<div>
+    <p>Commentaire</p>
    <%= form.text_area :text %>
+</div>
 
    <div class="actions">
     <%= form.submit %>
    </div>
-  <% end %>
+     <% end %>
+</div>
+
 
 

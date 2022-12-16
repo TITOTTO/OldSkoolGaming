@@ -9,7 +9,7 @@
       <div class="container py-5">
         <h1 class="display-5 bg-dark text-white fw-bold border border-2 border-dark p-3 text-center"><%= @article.title %></h1>
         <p class="border border-2 border-dark p-3 text-dark"><%= @article.content %></p>
-        <p><%= @article.console %> | Très bon état</p>
+        <p><%= @article.console %> | <%= @article.typeofgame %></p>
 
       </div>
       <div class="container py-5 d-flex align-items-center justify-content-center">
@@ -56,7 +56,7 @@
             Marque: <%= @article.console %>
           </p>
           <p>
-            État: Très bon état
+            État: <%= @article.typeofgame %>  
           </p>
           <p class="border-bottom border-2">
             Paiement: VISA
@@ -74,8 +74,6 @@
 <%= render partial: "thecomments/form",  locals: {article: @article} %>
 </div>
 <%= link_to "Repondre", nil , remote: true, class: "btn btn-danger", data: { controller: "comments", action: "comments#toggleForm"} %> 
-<div>Voici les articles que ce vendeur proposent
-</div>
 
 <section class="bg-mainos">
   <div class="container ">

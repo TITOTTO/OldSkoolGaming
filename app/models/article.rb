@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   validates :price, numericality: { message: "%{value} semble incorrect" }
 
     
-    enum :typeofgame, [:Non_fonctionnel, :Mauvais_état, :Bon_état, :Neuf]
+    enum :typeofgame, [:Mauvais_état, :Bon_état, :Très_bon_état, :Neuf]
     enum :console, [:SNES, :PS1, :SEGA]
     belongs_to :seller, class_name: "User"
     belongs_to :buyer, class_name: "User", optional: true
