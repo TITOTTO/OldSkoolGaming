@@ -28,16 +28,24 @@
       <% if current_user.nil? %>
       <section class="bg-white border-bottom border-2 border-dark">
         <% else %>
-        <section class="bg-mainos ">
+        <section class="bg-mainos pt-5 ">
           <% end %>
       <div class="container d-flex justify-content-center align-items-end">
           <div class="card mb-5">
             <div class="card-body rounded-0 border border-2 border-dark card-box">
           <p class="lead text-dark ombre"> Quel type de console recherchez-vous ?</p>
         <%= form_with url: "/articles", method: :get do |form| %>
-            <%= form.label :console %> <br />
+            <p>Type de console</p>
             <%= form.select :console, options_for_select(Article.consoles.map { |key, value| [key.titleize, Article.consoles.key(value)] }) %> <br />
-	          <%= form.submit %>
+
+
+	          <p>Etat de la console</p>
+            <div class="d-flex justify-content-between">
+            <%= form.select :typeofgame, options_for_select(Article.typeofgames.map { |key, value| [key.titleize, Article.typeofgames.key(value)] }) %>
+            
+	    <%= form.submit "Rechercher", class:"btn btn-primary rounded-0" %>
+    </div>
+
         <% end %>
       </div>
         </div>
