@@ -9,6 +9,7 @@
       <div class="cardos border border-2 border-dark zoom rounded-0" style="width: 15rem;">
         <div class="fw-bold text-dark">
           <%= article.title %>
+
         </div>
         <% if article.console == "SEGA" %>
         <%= link_to image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300"), article_path(article) %>
@@ -17,6 +18,7 @@
         <% elsif article.console == "SNES" %>
         <%= link_to image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/super-nintendo-snes-kovW238-600.jpg", size: "200x300"), article_path(article) %>
         <% end %>
+        
   <div class="card-body">
     <h5 class="card-title"></h5>
     <div class="clearfix mb-3">
