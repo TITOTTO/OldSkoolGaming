@@ -3,10 +3,10 @@
     <div class="row ">
       <p class="lead text-dark pt-5">Nouveaux articles</p>
 
-      <div class="d-flex">
+      <div class="d-flex flex-lg-row flex-column">
         <% articles.where(buyer: nil).last(4).each do |article| %>
           <div
-            class="cardos border border-2 border-dark zoom rounded-0"
+            class="cardos border border-2 border-dark zoom rounded-0 mb-5"
             style="width: 15rem;"
           >
             <div class="fw-bold text-dark">

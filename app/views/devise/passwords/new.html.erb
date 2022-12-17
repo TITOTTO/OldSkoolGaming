@@ -1,28 +1,6 @@
-<style>
-.btn-color{
-  background-color: #0e1c36;
-  color: #fff;
-  
-}
-
-.profile-image-pic{
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-}
-
-.cardbody-color{
-  background-color: #ebf2fa;
-}
-
-a{
-  text-decoration: none;
-}
-</style>
-
-<div class="container-fluid">
+<div class="container">
 <p class="text-uppercase font-weight-bold"></p>
-<div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7 bg-white">
+<div class="position-relative overflow-hidden shadow-lg mb-7 bg-white border border-2 border-dark">
 
 <% # Hero page %>
 <!-- -------- START HEADER 1 w/ text and image on right ------- -->
@@ -57,7 +35,7 @@ a{
             </div>
         <div class="text-center">
            <div class="actions col-6 mx-auto py-2">
-               <%= f.submit "valider", class: "btn bg-gradient-primary w-100" %>
+               <%= f.submit "valider", class: "rounded-0 btn bg-gradient-primary w-100" %>
            </div>
               <% end %>
         </div>               
