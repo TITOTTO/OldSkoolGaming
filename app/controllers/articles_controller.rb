@@ -11,6 +11,9 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comments = @article.comments
     @articles = @article.seller.my_articles
+    @artcart = ArticleCart.all
+    @artcartuser = @artcart.where(article_id: @article.id, cart_id: current_user.cart.id)[0]
+    puts @artcartuser.class
   end
 
   # GET /articles/new
@@ -42,10 +45,9 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
     @article = Article.find(params[:id])
-    @article.update(console: params[:console]) if params[:console] != ""
-    @article.update(title: params[:title]) if params[:title] != ""
-    @article.update(content: params[:description]) if params[:description] != ""
-    @article.update(price: params[:price]) if params[:price] != ""
+    @article.update!(title: params[:title]) if params[:title] != ""
+    @article.update!(content: params[:description]) if params[:description] != ""
+    @article.update!(price: params[:price]) if params[:price] != ""
     redirect_to article_path(@article)
   end
 

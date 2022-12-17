@@ -69,9 +69,13 @@
             Paiement: VISA
           </p>
           <% if current_user %>
-          <% if current_user != @article.seller %>
-          <%= button_to "Mettre dans le caddie", user_carts_path(current_user, article: @article.id), method: :create, class:"btn btn-primary rounded-0" %>
-          <% end %>
+            <% if current_user != @article.seller %>
+                <% if @artcartuser.class == NilClass %>
+                  <%= button_to "Mettre dans le caddie", user_carts_path(current_user, article: @article.id), method: :create, class:"btn btn-primary rounded-0" %>
+              <% else%>
+                  <%= link_to "Mon panier", user_carts_path(current_user), class: "text-dark" %>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>

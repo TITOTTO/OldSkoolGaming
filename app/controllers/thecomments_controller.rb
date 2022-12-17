@@ -29,7 +29,7 @@ class ThecommentsController < ApplicationController
 
     respond_to do |format|
       if @thecomment.save
-        format.html { redirect_to thecomment_url(@thecomment), notice: "Thecomment was successfully created." }
+        format.html { redirect_to article_path(params[:article_id]), notice: "Thecomment was successfully created." }
         format.json { render :show, status: :created, location: @thecomment }
       else
         format.html { render :new, status: :unprocessable_entity }
