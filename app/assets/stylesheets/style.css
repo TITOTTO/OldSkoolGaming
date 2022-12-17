@@ -2,6 +2,11 @@ body {
     background-color: #FFF0E5;
 }
 
+.profile-image-pic{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
 
 .img:active {
     transform: scale(1.2);
