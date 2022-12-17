@@ -62,7 +62,9 @@
             Paiement: VISA
           </p>
           <% if current_user %>
+          <% if current_user != @article.seller %>
           <%= button_to "Mettre dans le caddie", user_carts_path(current_user, article: @article.id), method: :create, class:"btn btn-primary rounded-0" %>
+          <% end %>
           <% end %>
         </div>
       </div>
@@ -74,7 +76,7 @@
 <%= render partial: "thecomments/form",  locals: {article: @article} %>
 </div>
 <%= link_to "Repondre", nil , remote: true, class: "btn btn-danger", data: { controller: "comments", action: "comments#toggleForm"} %> 
-
+<% end %>
 <section class="bg-mainos">
   <div class="container ">
     <div class="row ">
