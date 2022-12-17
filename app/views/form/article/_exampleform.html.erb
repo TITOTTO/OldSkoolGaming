@@ -1,9 +1,9 @@
 <div
-    class="cardos border border-2 border-dark zoom rounded-0"
+    class="cardos border border-2 border-dark zoom rounded-0 mb-5"
     style="width: 15rem;"
 >
     <div class="fw-bold text-dark">
-        <p><%= article.title %></p>
+        <p class="fw-bold"><%= article.title %></p>
     </div>
     <% if article.console == "SEGA" && current_user %>
         <%= link_to image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300"), article_path(article) %>
@@ -15,8 +15,14 @@
     <div class="card-body">
         <h5 class="card-title"></h5>
             <div class="clearfix mb-3">
-                <span class="float-start badge rounded-pill bg-gradient-info"><%= article.console %></span>
-                <span class="float-end price-hp fw-bold text-dark "><%= article.price %></span>
+                <% if article.console == "SEGA" %>
+              <span class="float-start badge rounded-pill bg-primary"><%= article.console %></span>
+              <% elsif article.console == "SNES" %>
+              <span class="float-start badge rounded-pill bg-danger"><%= article.console %></span>
+              <% elsif article.console == "PS1" %>
+              <span class="float-start badge rounded-pill bg-dark"><%= article.console %></span>
+              <% end %>
+              <span class="float-end price-hp fw-bold text-dark "><%= article.price %> €</span>
             </div>
     </div>
 </div>

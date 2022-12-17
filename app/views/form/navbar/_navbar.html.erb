@@ -24,20 +24,20 @@
             <%= image_tag "https://cdn-icons-png.flaticon.com/512/3607/3607444.png", style: "height: 32px" %>
           <% end %>
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-light border border-2 border-dark rounded-0" aria-labelledby="navbarDarkDropdownMenuLink">
             <% if current_user.admin == true %>
       <li class="dropdown-item">
-        <%= link_to "Admin", user_index_path, class: "text-white" %>
+        <%= link_to "Admin", user_index_path, class: "text-dark" %>
       </li>
       <% end %>
             <li class="dropdown-item">
-        <%= link_to "Mon compte", user_path(current_user), class: "text-white" %>
+        <%= link_to "Mon compte", user_path(current_user), class: "text-dark" %>
       </li>
       <li class="dropdown-item">
-        <%= link_to "Mon panier / #{current_user.cart.total.to_f}0 €", user_carts_path(current_user), class: "text-white" %>
+        <%= link_to "Mon panier / #{current_user.cart.total.to_f}0 €", user_carts_path(current_user), class: "text-dark" %>
       </li>
             <li class="dropdown-item">
-        <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-outline-light rounded-pill btn-sm mb-0" %>
+        <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark rounded-0 border-2 btn-sm mb-0" %>
       </li>
             
           </ul>
@@ -58,15 +58,15 @@
     <div class="dropdown d-flex mt-3">
       <ul class="navbar-nav me-auto mx-auto">
         <li>
-  <button class="btn btn-sm btn-outline-primary rounded-0 dropdown-toggle mx-3" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-sm btn-outline-dark rounded-0 border-2 dropdown-toggle mx-3" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     S'inscrire | Se connecter
   </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+  <ul class="dropdown-menu dropdown-menu-light border border-2 border-dark rounded-0" aria-labelledby="dropdownMenuButton1">
     <li class="dropdown-item">
-        <%= link_to "S'inscrire", new_user_registration_path, class: "text-white" %>
+        <%= link_to "S'inscrire", new_user_registration_path, class: "text-dark" %>
       </li>
     <li class="dropdown-item ">
-        <%= link_to "Connexion", new_user_session_path, class: "text-white" %>
+        <%= link_to "Connexion", new_user_session_path, class: "text-dark" %>
       </li>
   </ul>
 </li>
