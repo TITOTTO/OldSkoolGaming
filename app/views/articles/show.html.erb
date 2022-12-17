@@ -12,7 +12,7 @@
         <p><%= @article.console %> | <%= @article.typeofgame %></p>
 
       </div>
-      <div class="container py-5 d-flex align-items-center justify-content-center">
+      <div class="container py-5 d-flex align-items-center justify-content-center d-none d-md-block">
         <%= image_tag("http://atlas-content-cdn.pixelsquid.com/stock-images/nintendo-nes-console-game-xwVG4NC-600.jpg", size: "200x300")%>
       </div>
     </div>
@@ -20,7 +20,7 @@
     <div class="row align-items-start justify-content-center">
       <% if current_user == @article.seller %>
         <div class="col-md-4">
-          <div class="h-100 p-5 text-white bg-dark rounded-0 border border-2 border-dark d-flex row">
+          <div class="h-100 p-5 text-white bg-dark rounded-0 border border-2 border-dark d-flex row mb-4">
             <p class="lead text-white pb-3">Besoin de faire des modifications ?</p>
             <div class="text-center">
               
@@ -34,12 +34,19 @@
         </div>
       <% else %>
         <div class="col-md-4">
-          <div class="h-100 p-5 text-white bg-dark rounded-0 border border-2 border-dark d-flex row">
-            <p class="lead text-white pb-3">Pensez à laisser un commentaire si vous aimez le produit</p>
-            <div class="d-flex justify-content-center">
-              <%= image_tag "game.png", style:"height: 300px;" %>
+          <div class="h-100 p-5 text-white bg-dark rounded-0 border border-2 border-dark d-flex row mb-4">
+            <p class="lead text-white pb-3">Pensez à laisser un commentaire si vous aimez le produit :)</p>
+            <% if current_user %>
+<div class="commentaire d-none" >
+<%= render partial: "thecomments/form",  locals: {article: @article} %>
+</div>
+
+<div class="d-flex justify-content-center container border border-2 border-dark mx-auto">
+<%= link_to "Commenter", nil , remote: true, class: "btn btn-outline-secondary border-2 rounded-0", data: { controller: "comments", action: "comments#toggleForm"} %>
+<% end %>
+</div>
           </div>
-          </div>
+
 
         </div>
       <% end %>
@@ -71,12 +78,8 @@
     </div>
   </div>
 </section>
-<% if current_user %>
-<div class="commentaire d-none" >
-<%= render partial: "thecomments/form",  locals: {article: @article} %>
-</div>
-<%= link_to "Repondre", nil , remote: true, class: "btn btn-danger", data: { controller: "comments", action: "comments#toggleForm"} %> 
-<% end %>
+
+
 <section class="bg-mainos">
   <div class="container ">
     <div class="row ">

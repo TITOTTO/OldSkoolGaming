@@ -2,6 +2,38 @@ body {
     background-color: #FFF0E5;
 }
 
+#order-heading {
+    position: relative;
+    max-width: 800px;
+    padding-top: 20px;
+    margin: 30px auto 0px
+}
+
+#order-heading .text-uppercase {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 600
+}
+
+#order-heading .h4 {
+    font-weight: 600
+}
+
+#order-heading .h4+div p {
+    font-size: 0.8rem;
+    color: #777
+}
+
+
+.wrapper-cart {
+    padding: 0px 50px 50px;
+    max-width: 800px;
+    margin: 0px auto 40px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px
+}
+
+
 .profile-image-pic{
   height: 200px;
   width: 200px;
