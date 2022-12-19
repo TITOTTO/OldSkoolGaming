@@ -12,8 +12,8 @@ Ce projet a plusieurs objectifs :
 
 
 **## Pitch**
-Pour ce projet, nous allons créer une place de marché (marketplace) de revente de jeux vidéos et de consoles de la naissance du gaming (70's) jusqu'a la xbox one (sortie en 2013). 
-La boutique va afficher les différents jeux et consoles, puis les clients pourront s'inscrire, catégoriser et proposer à la vente des jeux et des consoles, et s'ils le souhaitent remplir leur panier, et payer l'objet avec Stripe afin de payer leur commande et la recevoir.
+Pour ce projet, nous allons créer une place de marché (marketplace) de revente de consoles de la naissance du gaming (70's) jusqu'a la xbox one (sortie en 2013). 
+La boutique va afficher les différents jeux et consoles, puis les clients pourront s'inscrire, catégoriser et proposer à la vente de consoles, et s'ils le souhaitent remplir leur panier, et payer l'objet avec Stripe afin de payer leur commande et la recevoir.
 
 **## MVP**
 La version minimaliste mais toutefois fonctionnelle de l'e-boutique permet de s'inscrire, se connecter, d'afficher des jeux et des consoles et d'en proposer à la vente.  A partir de cette version minimaliste, nous ajouterons des fonctionnalités pour la rendre plus agréable.
@@ -22,8 +22,6 @@ La page d'accueil du site comprendra la liste des produits qui sont à vendre. U
 
 Un utilisateur peut accéder facilement à son panier, accéder au checkout pour payer. Il paiera sa commande via Stripe, il recevra un email avec la confirmation de commande. 
 L'administrateur du site recevra aussi un email avec le récapitulatif de la commande qui vient d'être passée.
-
-La version minimaliste tournera avec un fichier `seed.rb` qui contient quelques exemples de produits afin d'illustrer notre offre produit de manière automatisée 
 
 ## Quelques fonctionnalités à ajouter
 Une fois que le MVP est fonctionnel, nous prenons le temps de célébrer cette victoire bien méritée sur les forces obscures d'Heroku (que nous délaissons au profit de Fly plus amical) 
