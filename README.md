@@ -13,7 +13,9 @@ Ce projet a plusieurs objectifs :
 
 **## Pitch**
 Pour ce projet, nous allons créer une place de marché (marketplace) de revente de consoles de la naissance du gaming (70's) jusqu'a la xbox one (sortie en 2013). 
+
 La boutique va afficher les différentes consoles, puis les clients pourront s'inscrire, catégoriser et proposer à la vente de consoles, et s'ils le souhaitent remplir leur panier, et payer l'objet avec Stripe afin de payer leur commande et la recevoir.
+
 
 **## MVP**
 L'e-boutique permet de s'inscrire, se connecter, d'afficher des consoles et d'en proposer à la vente.  A partir de cette version minimaliste, nous ajouterons des fonctionnalités pour la rendre plus agréable.
